@@ -65,62 +65,82 @@ namespace Netduino
                 byte j = 0;
                 double resolution = Resolution(can.Resolution);
                 double gain = System.Math.Pow(2, (byte)can.Gain);
-                try
+
+                if (commut)
                 {
-                    if (commut)
+                    try
                     {
-                        leds.Write(0xF0); commut = false;
+                        leds.Write(0xF0);
+                    }
+                    catch (System.IO.IOException ex)
+                    {
+#if LCD
+                        lcd.ClearScreen(); lcd.PutString(ex.Message);
+#else
+                            Debug.Print(ex.Message);
+#endif
+                    }
+                    finally
+                    {
+                        commut = false;
                         can.CHannel = MCP342x.Channel.Ch1; j = 1;
                     }
-                    else
+                }
+                else
+                {
+                    try
                     {
-                        leds.Write(0x0F); commut = true;
+                        leds.Write(0x0F);
+                    }
+                    catch (System.IO.IOException ex)
+                    {
+#if LCD
+                        lcd.ClearScreen(); lcd.PutString(ex.Message);
+#else
+                            Debug.Print(ex.Message);
+#endif
+                    }
+                    finally
+                    {
+                        commut = true;
                         can.CHannel = MCP342x.Channel.Ch2; j = 2;
                     }
-
-                }
-                catch (System.IO.IOException ex)
-                {
-#if LCD
-                    lcd.ClearScreen(); lcd.PutString(ex.Message);
-#else
-                    Debug.Print(ex.Message);
-#endif
-                }
-
-                try
-                {
-                    Debug.Print("Continuous on channel " + j + " =>Tension= " + can.ReadVolts().ToString("F2") + "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
-                }
-                catch (System.IO.IOException ex)
-                {
-#if LCD
-                    lcd.ClearScreen(); lcd.PutString(ex.Message);
-#else
-                    Debug.Print(ex.Message);
-#endif
-                }
-                finally
-                {
-                    Thread.Sleep(1000);
                 }
 
 
-            }
-        }
-
-        static byte Resolution(MCP342x.SampleRate res)
-        {
-            byte value = 0;
-
-            switch (res)
+            try
             {
-                case MCP342x.SampleRate.TwelveBits: value = 12; break;
-                case MCP342x.SampleRate.FourteenBits: value = 14; break;
-                case MCP342x.SampleRate.SixteenBits: value = 16; break;
-                case MCP342x.SampleRate.EighteenBits: value = 18; break;
+                Debug.Print("Continuous on channel " + j + " =>Tension= " + can.ReadVolts().ToString("F2") + "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
             }
-            return value;
+            catch (System.IO.IOException ex)
+            {
+#if LCD
+                lcd.ClearScreen(); lcd.PutString(ex.Message);
+#else
+                    Debug.Print(ex.Message);
+#endif
+            }
+            finally
+            {
+                Thread.Sleep(1000);
+            }
+
+
         }
     }
+
+    static byte Resolution(MCP342x.SampleRate res)
+    {
+        byte value = 0;
+
+        switch (res)
+        {
+            case MCP342x.SampleRate.TwelveBits: value = 12; break;
+            case MCP342x.SampleRate.FourteenBits: value = 14; break;
+            case MCP342x.SampleRate.SixteenBits: value = 16; break;
+            case MCP342x.SampleRate.EighteenBits: value = 18; break;
+        }
+        return value;
+    }
+}
 }
