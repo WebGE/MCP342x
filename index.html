@@ -225,6 +225,7 @@
       <hr>
       <p><strong>Exemple</strong></p>
       <pre>
+using System.Threading;         
 using Microtoolskit.Hardware.IO;
 
 namespace test
@@ -237,6 +238,7 @@ namespace test
 
       while(true)
       { 
+        byte j = 0;
         double resolution = Resolution(can.Resolution);
         double gain = System.Math.Pow(2, (byte)can.Gain);
         Debug.Print("Continuous on channel " + j + " =>Tension= " + can.ReadVolts().ToString("F2") + "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
