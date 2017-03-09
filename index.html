@@ -181,7 +181,7 @@
         <strong>MicroToolsKit</strong> disponible sur <a href="https://www.nuget.org/packages/WebGE.MicroToolsKit/ " target="_blank">nuget.org</a>.</p>
       <p align="center"><img src="images/NuGet-large.png" /></p>
       <p><strong>Organisation des classes</strong> contenues dans MicroToolsKit
-        <a href="https://csharpembarquenetduino.wikispaces.com/6.+La+biblioth%C3%A8que+MicroToolsKit" target="_blank">[lien]</a>
+        <a href="https://csharpembarquenetduino.wikispaces.com/6.+MicroToolsKit+library" target="_blank">[lien]</a>
       </p>
       <p><em>Installer cette bibliothèque dans le projet simplifie l'utilisation de cette classe.</em></p>
       <hr>
@@ -215,7 +215,7 @@
         <li><strong>Utiliser</strong> le gestionnaire de paquets NuGet pour <strong>ajouter</strong> la bibliothèque <strong>MicroToolsKit</strong>          (
           <a href="https://www.nuget.org/packages/WebGE.MicroToolsKit/ " target="_blank ">nuget.org</a>) dans le projet.
           (Dans l'explorateur de solution, clic droit sur les <em>Références</em> du projet puis choisir <em>Gérer les packages NuGet...</em>.<strong> Installer</strong>          le paquet.)</li>
-        <li><strong>Ajouter</strong> l'espace de noms <strong>Microtoolskit.Hardware.Sensors</strong> dans l'en-tête du fichier
+        <li><strong>Ajouter</strong> l'espace de noms <strong>Microtoolskit.Hardware.IO</strong> dans l'en-tête du fichier
           source.
         </li>
         <li><strong>Créer</strong> un objet en utilisant le constructeur <em>MCP342x</em>.</li>
@@ -225,6 +225,8 @@
       <hr>
       <p><strong>Exemple</strong></p>
       <pre>
+using Microtoolskit.Hardware.IO;
+
 namespace test
 {
   public class Program
@@ -235,7 +237,6 @@ namespace test
 
       while(true)
       { 
-        byte j = 0;
         double resolution = Resolution(can.Resolution);
         double gain = System.Math.Pow(2, (byte)can.Gain);
         Debug.Print("Continuous on channel " + j + " =>Tension= " + can.ReadVolts().ToString("F2") + "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
