@@ -55,7 +55,8 @@
       <hr>
       <ul>
         <li><strong>Présentation</strong></li>
-        <p>Les circuits MCP3422, MCP3423 et MCP3424 sont des convertisseurs analogique numérique 18 bit sigma-delta précis et à faible bruit.
+        <p>Les circuits MCP3422, MCP3423 et MCP3424 sont des convertisseurs analogique numérique 18 bit sigma-delta précis et
+          à faible bruit.
         </p>
         <li><strong>Schéma interne du composant</strong></li>
         <p align="center"><img src="images/mcp342x.png" width="70%" height="70%"></p>
@@ -79,7 +80,8 @@
           <td><img src="images/dfr0316.png"></td>
         </tr>
         <tr align="center">
-          <td><a href="https://www.dfrobot.com/wiki/index.php/MCP3424_18-Bit_ADC-4_Channel_with_Programmable_Gain_Amplifier_(SKU:DFR0316)" target="_blank">Documentation</a> -
+          <td><a href="https://www.dfrobot.com/wiki/index.php/MCP3424_18-Bit_ADC-4_Channel_with_Programmable_Gain_Amplifier_(SKU:DFR0316)"
+              target="_blank">Documentation</a> -
             <a href="datasheets/DFR0316_V1.0_Schematic.PDF">Schéma</a>
           </td>
         </tr>
@@ -163,12 +165,13 @@
 
       <h4 id="REP">2.1 Contenu du répertoire proposé au téléchargement</h4>
       <hr>
-      <p>Le répertoire proposé au téléchargement (au format zip ou tar.gz) contient la solution <strong>MCP342x</strong>        composée :
+      <p>Le répertoire proposé au téléchargement (au format zip ou tar.gz) contient la solution <strong>MCP342x</strong> composée
+        :
       </p>
       <ul>
         <li>Du projet <strong>MCP342x </strong>: le <strong>code source</strong> de la classe <em>MCP342x</em>.</li>
         <li>Du projet <strong>Netduino </strong>: un exemple d'utilisation de cette classe avec une carte Netduino.</li>
-				<li>Du projet <strong>FezPanda </strong>: un exemple d'utilisation de cette classe avec une carte Fez Panda.</li>
+        <li>Du projet <strong>FezPanda </strong>: un exemple d'utilisation de cette classe avec une carte Fez Panda.</li>
       </ul>
       <hr>
 
@@ -205,17 +208,18 @@
       <p><strong>Création d'un projet avec l'IDE Visual Studio</strong></p>
       <hr>
       <ol>
-        <li><strong>Créer </strong>un nouveau projet en suivant la démarche décrite dans le chapitre <em>"Premier programme en C# étape par étape"</em>					du Wiki dédié à une carte <strong>Netduino</strong> ou du Wiki dédié à une carte <strong>Fez. </strong>Ces Wikis sont
-					accessibles
-					<a href="https://csharpembarquenetduino.wikispaces.com/6.+MicroToolsKit+library" target="_blank">ici</a>.</li>
-				<li><strong>Utiliser</strong> le gestionnaire de paquets NuGet pour <strong>ajouter</strong> la bibliothèque <strong>MicroToolsKit</strong>					(
-					<a href="https://www.nuget.org/packages/WebGE.MicroToolsKit/ " target="_blank ">nuget.org</a>) dans le projet. (Dans
-					l'explorateur de solution, clic droit sur les <em>Références</em> du projet puis choisir <em>Gérer les packages NuGet...</em>.<strong> Installer</strong>					le paquet.)</li>
+        <li><strong>Créer </strong>un nouveau projet en suivant la démarche décrite dans le chapitre <em>"Premier programme en C# étape par étape"</em>          du Wiki dédié à une carte <strong>Netduino</strong> ou du Wiki dédié à une carte <strong>Fez. </strong>Ces Wikis
+          sont accessibles
+          <a href="https://csharpembarquenetduino.wikispaces.com/6.+MicroToolsKit+library" target="_blank">ici</a>.</li>
+        <li><strong>Utiliser</strong> le gestionnaire de paquets NuGet pour <strong>ajouter</strong> la bibliothèque <strong>MicroToolsKit</strong>          (
+          <a href="https://www.nuget.org/packages/WebGE.MicroToolsKit/ " target="_blank ">nuget.org</a>) dans le projet.
+          (Dans l'explorateur de solution, clic droit sur les <em>Références</em> du projet puis choisir <em>Gérer les packages NuGet...</em>.<strong> Installer</strong>          le paquet.)</li>
         <li><strong>Ajouter</strong> l'espace de noms <strong>Microtoolskit.Hardware.Sensors</strong> dans l'en-tête du fichier
           source.
         </li>
         <li><strong>Créer</strong> un objet en utilisant le constructeur <em>MCP342x</em>.</li>
-        <li><strong>Utiliser</strong> la méthode <strong>ReadVolts</strong> pour déclencher une mesure de la tension sur l'une des entrées du convertisseur analogique numérique.</li>
+        <li><strong>Utiliser</strong> la méthode <strong>ReadVolts</strong> pour déclencher une mesure de la tension sur l'une
+          des entrées du convertisseur analogique numérique.</li>
       </ol>
       <hr>
       <p><strong>Exemple</strong></p>
@@ -251,11 +255,12 @@ namespace test
         </tr>
         <tr>
           <td><img src="images/Method_16x.png"></td>
-          <td><strong>TMP102</strong>(<strong>ADD0</strong> <em>pin</em>, <strong>UInt16</strong> <em>Frequency</em> )</td>
-          <td>Instancie un objet "TMP102 ". <br><strong>pin : </strong> égal à ADD0.GND =><strong>SLA</strong>= 0x48. (par défaut)<br>
-            <strong>Frequency: </strong>>Féquence du signal SCL = 100kHz. (par défaut)<br><br>
+          <td><strong>Mcp342x</strong>(<strong>UInt16</strong> <em>SLA</em>, <strong>Int16</strong> <em>Frequency</em> )</td>
+          <td>Constructeur de base. <br> Par défaut : Channel = CH1, Resolution = 12 bit, Conversion = Continuous, Gain = 1 <br>            <br>Instancie un objet "MCP342x ". <br><strong>SLA : </strong>compris entre 0x68 et 0x6B =><strong>SLA</strong>=
+            0x68 (par défaut)<br>
+            <strong>Frequency: </strong>>Féquence du signal SCL = 400kHz. (par défaut)<br><br>
             <strong>Exemple</strong><br>
-            <em>TMP102 ModuleMesureTemp = new TMP102();</em>
+            <em>MCP342x can = new MCP342x();</em>
           </td>
         </tr>
       </table>
@@ -269,85 +274,89 @@ namespace test
         </tr>
         <tr>
           <td><img src="images/Enumerator_16x.png"></td>
-          <td><strong>ADD0</strong></td>
+          <td><strong>Channel</strong></td>
           <td>
-            <p>Si la broche ADD0 est connecté à :</p>
-            <ul>
-              <li><strong>GND</strong> : adresse <strong>SLA </strong>= 0x48</li>
-              <li><strong>Vcc</strong> : adresse <strong>SLA </strong>= 0x49</li>
-              <li><strong>SDA</strong> : adresse <strong>SLA </strong>= 0x4A</li>
-              <li><strong>SCL</strong> : adresse <strong>SLA </strong>= 0x4B</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="images/Enumerator_16x.png"></td>
-          <td><strong>AlertPolarity</strong></td>
-          <td>
-            <p>AlertPolarity permet de régler l'état actif de la broche ALERT.</p>
-            <ul>
-              <li><strong>activeLow</strong> : broche active à l'état BAS</li>
-              <li><strong>activeHight</strong> : broche active à l'état HAUT</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="images/Enumerator_16x.png"></td>
-          <td><strong>ConsecutiveFaults</strong></td>
-          <td>
-            <p>Une erreur se produit lorsque la température dépasse les limites fixées par l'utilisateur dans les registres
-              THIGH et TLOW. <em>ConsecutiveFaults</em> active la broche ALERT si un, deux, quatre ou six dépassements se
-              sont produits.
+            <p>Sélection du canal sur lequel sera effectuée la conversion.
             </p>
             <ul>
-              <li><strong>one</strong></li>
-              <li><strong>two</strong></li>
-              <li><strong>four</strong></li>
-              <li><strong>six</strong></li>
+              <li><strong>Ch1</strong></li>
+              <li><strong>Ch2</strong></li>
+              <li><strong>Ch3</strong></li>
+              <li><strong>Ch4</strong></li>
             </ul>
           </td>
         </tr>
         <tr>
           <td><img src="images/Enumerator_16x.png"></td>
-          <td><strong>ConversionRate</strong></td>
+          <td><strong>ConversionMode</strong></td>
           <td>
-            <p>Fréquence de conversion </p>
+            <p>Un échantillonnage ou échantillonnage continu.</p>
             <ul>
-              <li><strong>quarter_Hz</strong> : une mesure toutes les quatre secondes</li>
-              <li><strong>one_Hz</strong> : une mesure par seconde</li>
-              <li><strong>four_Hz</strong> : quatre mesures par seconde (par defaut)</li>
-              <li><strong>height_Hz</strong> : huit mesures par seconde</li>
+              <li><strong>OneShot</strong> : réduit la consommation</li>
+              <li><strong> Continuous</strong></li>
             </ul>
           </td>
         </tr>
         <tr>
           <td><img src="images/Enumerator_16x.png"></td>
-          <td><strong>Registers</strong></td>
+          <td><strong>PGA_Gain</strong></td>
           <td>
-            <p>Sélection des registres du TMP102</p>
+            <p>Facteur d'amplification du signal avant une conversion.</p>
             <ul>
-              <li><strong>Temperature</strong> : contient la valeur de la température sur 12bits (par défaut). (lecture)</li>
-              <li><strong>Configuration</strong> : Paramétrage du TMP102 (lecture/évriture)</li>
-              <li><strong>T_Low</strong>: Contient la valeur limite basse de la température</li>
-              <li><strong>T_High</strong> : Contient la valeur limite haute de la température</li>
+              <li><strong>x1</strong></li>
+              <li><strong>x2</strong></li>
+              <li><strong>x4</strong></li>
+              <li><strong>x8</strong></li>
             </ul>
           </td>
         </tr>
         <tr>
           <td><img src="images/Enumerator_16x.png"></td>
-          <td><strong>ThermostatMode</strong></td>
+          <td><strong>SampleRate</strong></td>
           <td>
-            <p></p>
+            <p>Régle la résolution du convertisseur et la fréquence d'échantillonage Fe :</p>
             <ul>
-              <li><strong>ComparatorMode</strong> : En mode comparateur, la broche ALERT devient active lorsque la température
-                est égale ou supérieure à la valeur mémorisée dans T_HIGH et génère un nombre consécutif de défauts en accord
-                avec <em>ConsecutiveFaults</em> La broche ALERT reste active jusqu'à ce que la température soit inférieure
-                à la valeur mémorisée dans T_LOW et que le même nombre de défauts est atteint.</li>
-              <li><strong>InterruptMode</strong> : en mode interruption, la broche ALERT devient active quand le nombre d'erreurs
-                est atteint... (voir le datasheet pour plus d'informations)
-              </li>
+              <li><strong>TwelveBits</strong> => Fe = 240 SPS</li>
+              <li><strong>FourteenBits</strong> => Fe = 60 SPS</li>
+              <li><strong>SixteenBits</strong> => Fe =15 SPS</li>
+              <li><strong>EighteenBits</strong> => Fe = 3,75 SPS</li>
             </ul>
           </td>
+        </tr>
+      </table>
+
+      <p><strong>Propriétés</strong></p>
+      <table>
+        <tr>
+          <td></td>
+          <td><strong>Syntaxe</strong></td>
+          <td><strong>Description</strong></td>
+        </tr>
+        <tr>
+          <td><img src="images/Property_20x.png"></td>
+          <td><strong>Resolution</strong></td>
+          <td>Fixe ou retourne la résolution du convertisseur.</td>
+        </tr>
+        <tr>
+          <td><img src="images/Property_20x.png"></td>
+          <td><strong>Gain</strong></td>
+          <td>Fixe ou retourne le gain appliqué au signal sur l'entrée sélectionnée.</td>
+        </tr>
+        <tr>
+          <td><img src="images/Property_20x.png"></td>
+          <td><strong>CHannel</strong></td>
+          <td>Fixe ou retourne le canal sélectionné.</td>
+        </tr>
+        <tr>
+          <td><img src="images/Property_20x.png"></td>
+          <td><strong>Mode</strong></td>
+          <td>Fixe ou retourne le mode de conversion.</td>
+        </tr>
+
+        <tr>
+          <td><img src="images/Property_20x.png"></td>
+          <td><strong>TransactionTimeOut</strong></td>
+          <td>Fixe ou retourne le temps accordé à la transaction avant la génération d'une Exception.</td>
         </tr>
       </table>
 
@@ -360,75 +369,27 @@ namespace test
         </tr>
         <tr>
           <td><img src="images/Method_16x.png"></td>
-          <td><strong>bool</strong> Init(<strong>ADD0 </strong><em>addressSelect</em>)</strong>
+          <td><strong>void</strong> ConfigDevice(<strong>byte</strong><em> value</em>)</strong>
           </td>
           <td>
-            <p>Initialise le composant avec :</p>
+            <p>Configure le circuit avec : <br>value = RDY C1 C0 /O_C S1 S0 G1 G0 <br>value = 00010000 (default)</p>
             <ul>
-              <li><strong>addressSelect</strong> : A paramétrer, = ADD0.Gnd (par défaut)</li>
-              <li><strong>oneShotMode</strong> = false (par défaut)</li>
-              <li><strong>alertPolarity</strong> = AlertPolarity.activeHight (par défaut)</li>
-              <li><strong>conversionRate</strong> = ConversionRate.four_Hz (par défaut)</li>
-              <li><strong>thermostatMode</strong> = ThermostatMode.ComparatorMode (par défaut)</li>
+              <li><strong>RDY</strong> </li>
+              <li><strong>C1, C0</strong> </li>
+              <li><strong>/O_C</strong> </li>
+              <li><strong>S1,S0</strong> </li>
+              <li><strong>G1,G0</strong> </li>
             </ul>
             <br>
-            <strong>Exemple</strong><br>
-            <em>ModuleMesureTemp.Init();</em>
           </td>
         </tr>
         <tr>
           <td><img src="images/Method_16x.png"></td>
-          <td><strong>bool</strong> Init(<br> [
-            <strong>ADD0</strong> <em>addressSelect = ADD0.Gnd</em> ],<br> [
-            <strong>bool</strong> <em>oneShotMode = false</em> ],<br> [
-            <strong>AlertPolarity</strong> <em>alertPolarity = AlertPolarity.activeHight</em> ],<br> [
-            <strong>ConversionRate</strong> <em>conversionRate = ConversionRate.four_Hz</em> ], <br> [
-            <strong>ThermostatMode</strong> <em>thermostatMode = ThermostatMode.ComparatorMode</em> ])
+          <td><strong>double</strong> ReadVolts()<br>
           </td>
           <td>
-            <p>Initialise le composant avec :</p>
-            <ul>
-              <li><strong>addressSelect</strong> : A paramétrer, égale à ADD0.Gnd (par défaut) </li>
-              <li><strong>oneShotMode</strong> : A paramétrer, égal à false (par défaut)</li>
-              <li><strong>alertPolarity</strong> : A paramétrer, égale à AlertPolarity.activeHight (par défaut)</li>
-              <li><strong>conversionRate</strong> : A paramétrer, égale à ConversionRate.four_Hz (par défaut)</li>
-              <li><strong>thermostatMode</strong> : A paramétrer, égal à ThermostatMode.ComparatorMode (par défaut</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="images/Method_16x.png"></td>
-          <td><strong>float ReadAsCelcius()</strong></td>
-          <td>Renvoi la température de l'air en °C.<br><br>
-            <strong>Exemple</strong><br>
-            <em>temperature = ModuleMesureTemp.ReadAsCelcius();</em>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="images/Method_16x.png"></td>
-          <td><strong>float ReadAsFahrenheit()</strong></td>
-          <td>Renvoi la température de l'air en °F.
-            <br><br>
-            <strong>Exemple</strong><br>
-            <em>temperature = ModuleMesureTemp.ReadAsFahrenheit();</em>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="images/Method_16x.png"></td>
-          <td><strong>float ReadAsKelvin()</strong></td>
-          <td>Renvoi la température de l'air en K.
-            <br><br>
-            <strong>Exemple</strong><br>
-            <em>temperature = ModuleMesureTemp.ReadAsKelvin();</em>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="images/Method_16x.png"></td>
-          <td><strong>float ReadAsRankine()</strong></td>
-          <td>Renvoi la température de l'air en °R.
-            <br><br>
-            <strong>Exemple</strong><br>
-            <em>temperature = ModuleMesureTemp.ReadAsRankine();</em>
+            <p>Configure le circuit si des paramètre ont été changés. Renvoie la valeur de la tension présente sur l'entrée
+              sélectionnée (en V) </p>
           </td>
         </tr>
       </table>
