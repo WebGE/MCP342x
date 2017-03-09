@@ -193,7 +193,7 @@
       </ul>
       <hr>
 
-      <h4 id="DESC">2.4 Description et utilisation de la classe TMP102</h4>
+      <h4 id="DESC">2.4 Description et utilisation de la classeMCP342x</h4>
       <ul>
         <li><strong>Rôle: </strong>Contrôler un capteur de température à infrarouges MCP342x via un bus I²C.</li>
         <li><strong>Assembly: </strong> <em>MicroToolsKit</em> (disponible sur
@@ -214,26 +214,30 @@
         <li><strong>Ajouter</strong> l'espace de noms <strong>Microtoolskit.Hardware.Sensors</strong> dans l'en-tête du fichier
           source.
         </li>
-        <li><strong>Créer</strong> un objet en utilisant le constructeur <em>TMP102</em> et les paramètres appropriés.</li>
-        <li><strong>Initialiser</strong> le circuit avec la méthode <strong>Init</strong> et les paramètres appropriés.</li>
-        <li><strong>Utiliser</strong> la méthode <strong>ReadAsCelcius</strong> pour déclencher une mesure de température et
-          obtenir le résultat en °C.</li>
+        <li><strong>Créer</strong> un objet en utilisant le constructeur <em>MCP342x</em>.</li>
+        <li><strong>Utiliser</strong> la méthode <strong>ReadVolts</strong> pour déclencher une mesure de la tension sur l'une des entrées du convertisseur analogique numérique.</li>
       </ol>
       <hr>
       <p><strong>Exemple</strong></p>
       <pre>
-public static void Main() 
+namespace test
 {
-  float temperature = 0; 
-  TMP102 ModuleMesureTemp = new TMP102(); 
-  ModuleMesureTemp.Init();
+  public class Program
+  {
+    public static void Main() 
+    {
+      MCP342x can = new MCP342x();
 
-  while(true)
-  { 
-    temperature = ModuleMesureTemp.ReadAsCelcius(); 
-    Debug.Print("Temp=" + temperature.ToString("F1") + "degC");
-    Thread.Sleep(1000); 
-  } 
+      while(true)
+      { 
+        byte j = 0;
+        double resolution = Resolution(can.Resolution);
+        double gain = System.Math.Pow(2, (byte)can.Gain);
+        Debug.Print("Continuous on channel " + j + " =>Tension= " + can.ReadVolts().ToString("F2") + "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
+        Thread.Sleep(1000);
+        } 
+      }
+   }
 }
       </pre>
       <hr>
