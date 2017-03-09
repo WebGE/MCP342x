@@ -225,27 +225,27 @@
       <hr>
       <p><strong>Exemple</strong></p>
       <pre>
-using System.Threading;         
+using Microsoft.SPOT;
 using Microtoolskit.Hardware.IO;
+using System.Threading;
 
 namespace test
 {
-  public class Program
-  {
-    public static void Main() 
+    public class Program
     {
-      MCP342x can = new MCP342x();
+        public static void Main()
+        {
+            MCP342x can = new MCP342x();
 
-      while(true)
-      { 
-        byte j = 0;
-        double resolution = Resolution(can.Resolution);
-        double gain = System.Math.Pow(2, (byte)can.Gain);
-        Debug.Print("Continuous on channel " + j + " =>Tension= " + can.ReadVolts().ToString("F2") + "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
-        Thread.Sleep(1000);
-        } 
-      }
-   }
+            while (true)
+            {
+                byte j = 0;
+                double gain = System.Math.Pow(2, (byte)can.Gain);
+                Debug.Print("Continuous on channel " + j + " =>Tension= " + can.ReadVolts().ToString("F2")  + " " + "Gain: " + gain);
+                Thread.Sleep(1000);
+            }
+        }
+    }
 }
       </pre>
       <hr>
