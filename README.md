@@ -4,7 +4,7 @@ Source code.
 
 A <strong>.NETMF 4.3 class</strong> write for a MCP3424 circuit : <strong>18-Bit, Multi-Channel ΔΣ Analog-to-Digital Converter with I2C Interface and On-Board Reference class</strong>. 
 
-This class is also in the <a href="https://www.nuget.org/packages/WEBGE.Microtoolskit/" target="_blank">MicroToolsKit</a> <strong>library</strong>. Download at <a href="https://www.nuget.org" target="_blank">nuget.com</a> <strong>(To come up)</strong>
+This class is also in the <a href="https://www.nuget.org/packages/WEBGE.Microtoolskit/" target="_blank">MicroToolsKit</a> <strong>library</strong>. Download at <a href="https://www.nuget.org" target="_blank">nuget.com</a>
 
  <img src="img/nuget.JPG" align="center" />
 
