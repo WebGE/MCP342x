@@ -45,7 +45,7 @@ Test negative voltage
 
 <strong>To get started<strong>
 --------------------
-See <a href="#" target="_blank">MCP342x GitHub Page</a>. <strong>(To come up)</strong>
+See <a href="https://webge.github.io/MCP342x/" target="_blank">MCP342x GitHub Page</a>.
 <hr>
 
 <strong>Maintened by<strong> <a href="mailto:philippemariano@gmail.com">WebGE</a>
