@@ -18,7 +18,7 @@
 
       <h1 id="project_title">18-Bit, Multi-Channel ΔΣ Analog-to-Digital Converter (I²C)</h1>
       <h2 id="project_tagline">Description de la classe <strong><em>MCP342x</em></strong> développée en C# sous .NETMF 4.3 pour les cartes Netduino
-        et FEZ (PANDA, COBRA...)</h2>
+        et GHI FEZ (PANDA, COBRA...)</h2>
 
       <section id="downloads">
         <a class="zip_download_link" href="https://github.com/WebGE/MCP342x/zipball/master">Download this project as a .zip file</a>
@@ -35,7 +35,7 @@
       <ol>
         <li>LE MATERIEL
           <ol>
-            <li>Le circuit 342x: 18-Bit, Multi-Channel ΔΣ Analog-to-Digital Converter with I2C Interface and On-Board Reference</li>
+            <li>Les circuits 342x: 18-Bit, Multi-Channel ΔΣ Analog-to-Digital Converter with I2C Interface and On-Board Reference</li>
             <li><a href="#DUINO">Les cartes Netduino</a></li>
             <li><a href="#FEZ">Les cartes FEZ</a> </li>
           </ol>
@@ -52,7 +52,7 @@
       <hr>
       <h3>1. LE MATERIEL</h3>
       <hr>
-      <h4>1.1 Le circuit 342x: 18-Bit, Multi-Channel ΔΣ Analog-to-Digital Converter with I2C Interface and On-Board Reference.</h4>
+      <h4>1.1 Les circuits 342x: 18-Bit, Multi-Channel ΔΣ Analog-to-Digital Converter with I2C Interface and On-Board Reference.</h4>
       <hr>
       <ul>
         <li><strong>Présentation</strong></li>
@@ -71,11 +71,11 @@
           <a href="http://www.gotronic.fr/art-module-4-canaux-analogiques-i2c-dfr0316-22402.htm" target="_blank">Go Tronic</a>
         </li>
       </ul>
-      <h4>Module 4 canaux analogiques I2C DFR0316</h4>
+      <h4>Module 4 canaux analogiques I²C DFR0316</h4>
       <hr>
       <table width="100% ">
         <tr align="center">
-          <td><strong>DFROBOT</strong></td>
+          <td><strong>Module DFROBOT DFR0316</strong></td>
         </tr>
         <tr align="center">
           <td><img src="images/dfr0316.png"></td>
@@ -83,7 +83,7 @@
         <tr align="center">
           <td><a href="https://www.dfrobot.com/wiki/index.php/MCP3424_18-Bit_ADC-4_Channel_with_Programmable_Gain_Amplifier_(SKU:DFR0316)"
               target="_blank">Documentation</a> -
-            <a href="datasheets/DFR0316_V1.0_Schematic.PDF">Schéma</a>
+            <a href="datasheets/DFR0316_V1.0_Schematic.PDF" target="_blank">Schéma</a>
           </td>
         </tr>
       </table>
@@ -183,21 +183,22 @@
       <p><strong>Organisation des classes</strong> contenues dans MicroToolsKit
         <a href="https://csharpembarquenetduino.wikispaces.com/6.+MicroToolsKit+library" target="_blank">[lien]</a>
       </p>
-      <p><em>Installer cette bibliothèque dans le projet simplifie l'utilisation de cette classe.</em></p>
+      <p><em>Installer ce nuget dans le projet Visual Studio simplifie l'utilisation de la classe.</em></p>
       <hr>
 
       <h4 id="WIKI">2.3 Les Wikis</h4>
+      Des wikis sont dédiés aux cartes Netduino et GHI Fez. Ils proposent au téléchargement :
       <ul>
-        <li><strong>Fascicules</strong> d'exemples de code pour les cartes <strong>Netduino</strong>.
+        <li><strong>Deux fascicules</strong> d'exemples de code pour les cartes <strong>Netduino</strong>.
           <a href="https://csharpembarquenetduino.wikispaces.com/5.+Les+fascicules+d%27exemples+cod%C3%A9s+en+CSharp " target="_blank">[lien]</a>
         </li>
-        <li><strong>Fascicule</strong> d'exemples de code pour les cartes <strong>FEZ</strong>.
+        <li><strong>Un fascicule</strong> d'exemples de code pour les cartes <strong>FEZ</strong>.
           <a href="https://csharpembarquefez.wikispaces.com/5.+Les+fascicules+d%27exemples+cod%C3%A9s+en+CSharp " target="_blank">[lien]</a>
         </li>
       </ul>
       <hr>
 
-      <h4 id="DESC">2.4 Description et utilisation de la classeMCP342x</h4>
+      <h4 id="DESC">2.4 Description et utilisation de la classe MCP342x</h4>
       <ul>
         <li><strong>Rôle: </strong>Contrôler un capteur de température à infrarouges MCP342x via un bus I²C.</li>
         <li><strong>Assembly: </strong> <em>MicroToolsKit</em> (disponible sur
@@ -219,15 +220,16 @@
           source.
         </li>
         <li><strong>Créer</strong> un objet en utilisant le constructeur <em>MCP342x</em>.</li>
-        <li><strong>Utiliser</strong> la méthode <strong>ReadVolts</strong> pour déclencher une mesure de la tension sur l'une
+        <li><strong>Utiliser</strong> la méthode <strong>ReadVolts</strong> pour déclencher une mesure de la tension présente sur l'une
           des entrées du convertisseur analogique numérique.</li>
       </ol>
       <hr>
       <p><strong>Exemple</strong></p>
       <pre>
-using Microsoft.SPOT;
-using Microtoolskit.Hardware.IO;
 using System.Threading;
+using Microsoft.SPOT;
+
+using Microtoolskit.Hardware.IO;
 
 namespace test
 {
