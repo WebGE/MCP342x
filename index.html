@@ -272,7 +272,8 @@ namespace NetduinoMCP2424
         <tr>
           <td><img src="images/Method_16x.png"></td>
           <td><strong>Mcp342x</strong>(<strong>UInt16</strong> <em>SLA</em>, <strong>Int16</strong> <em>Frequency</em> )</td>
-          <td>Constructeur de base. <br> Par défaut : Channel = CH1, Resolution = 12 bit, Conversion = Continuous, Gain = 1 <br>            <br>Instancie un objet "MCP342x ". <br><strong>SLA : </strong>compris entre 0x68 et 0x6B =><strong>SLA</strong>=
+          <td>Constructeur de base. <br> Par défaut : Channel = CH1, Resolution = 12 bit, Conversion = Continuous, Gain = 1 <br>
+          <br>Instancie un objet "MCP342x ". <br><strong>SLA : </strong>adresse du circuit comprise entre 0x68 et 0x6B =><strong>SLA</strong>=
             0x68 (par défaut)<br>
             <strong>Frequency: </strong>>Féquence du signal SCL = 400kHz. (par défaut)<br><br>
             <strong>Exemple</strong><br>
@@ -432,8 +433,8 @@ namespace NetduinoMCP2424
               <li><strong>G1, G0 : </strong>Réglage du gain</li>
             </ul>
             <br>
-             Note : Une exception System.IO.IOException est générée avec le message "I2CBus
-            error + SLA" en cas d'échec de la communication.
+             Note :- Une exception System.IO.IOException est générée avec le message "I2CBus
+            error SLA" en cas d'échec de la communication.
           </td>
         </tr>
         <tr>
@@ -443,9 +444,9 @@ namespace NetduinoMCP2424
           <td>
             <p>Configure le circuit si des paramètres ont été changés. Renvoie la valeur de la tension présente sur l'entrée
               sélectionnée (en V) </p>
-            <br> Notes <br> Une exception System.IO.IOException est générée avec le message "I2CBus
-            error + SLA" en cas d'échec de la communication. <br> Une exception System.IO.IOException est générée avec le message 
-            "No sample on + SLA"" si la lecture du résultat de la conversion échoue.   
+            <br> Notes <br>- Une exception <em>System.IO.IOException</em> est générée avec le message "I2CBus
+            error SLA" en cas d'échec de la communication. <br>- Une exception <em>System.IO.IOException</em> est générée avec le message 
+            "No sample on SLA" si la lecture du résultat de la conversion échoue.   
           </td>
         </tr>
       </table>
