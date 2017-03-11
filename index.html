@@ -340,32 +340,63 @@ namespace test
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>Resolution</strong></td>
-          <td>Fixe ou retourne la résolution du convertisseur.<br>
-            <strong>Exemples</strong><br> // Pour relier le canal CH2 à l'entrée du can. <br>
-            <em>can.CHannel = MCP342x.Channel.Ch2; </em> <br> // Pour connaître le canal relié au can <br>
-            <em>byte canal = (byte)can.CHannel; </em>
+          <td>Fixe ou retourne la résolution du convertisseur.
+            <br><br>
+            <strong>Exemples</strong><br> 
+            // Pour régler la résolution du can à 14 bit. <br>
+            <em>can.Resolution = MCP342x.SampleRate.FourteenBits;</em> <br> 
+            // Pour connaître la résolution du can <br>
+            <em>byte resolution = (byte)can.Resolution;</em>
           </td>
         </tr>
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>Gain</strong></td>
-          <td>Fixe ou retourne le gain appliqué au signal sur l'entrée sélectionnée.</td>
+          <td>Fixe ou retourne le gain appliqué au signal sur l'entrée sélectionnée.
+             <br><br>
+            <strong>Exemples</strong><br> 
+            // Pour régler le gain de l'amplificateur à x4. <br>
+            <em>can.Gain = MCP342x.PGA_Gain.x4;</em> <br> 
+            // Pour connaître la valeur du gain de l'amplificateur<br>
+            <em>double gain = System.Math.Pow(2, (byte)can.Gain);</em>
+          </td>
         </tr>
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>CHannel</strong></td>
-          <td>Fixe ou retourne le canal sélectionné.</td>
+          <td>Fixe ou retourne le canal sélectionné.
+             <br><br>
+            <strong>Exemples</strong><br> 
+            // Pour relier le canal CH2 à l'entrée du can. <br>
+            <em>can.CHannel = MCP342x.Channel.Ch2; </em> <br> 
+            // Pour connaître le canal relié au can <br>
+            <em>byte canal = (byte)can.CHannel; </em>
+          </td>
         </tr>
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>Mode</strong></td>
-          <td>Fixe ou retourne le mode de conversion.</td>
+          <td>Fixe ou retourne le mode de conversion.
+             <br><br>
+            <strong>Exemples</strong><br> 
+            // Pour régler le mode de conversion sur One Shot . <br>
+            <em> can.Mode = MCP342x.ConversionMode.OneShot; </em> <br> 
+            // Pour connaître le mode de conversion <br>
+            <em>byte mode = byte(can.Mode);</em>
+          </td>
         </tr>
 
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>TransactionTimeOut</strong></td>
-          <td>Fixe ou retourne le temps accordé à la transaction avant la génération d'une Exception.</td>
+          <td>Fixe ou retourne le temps (en ms) accordé à la transaction avant la génération d'une Exception.
+             <br><br>
+            <strong>Exemples</strong><br> 
+            // Pour régler la durée maximum d'une transaction à 200ms. <br>
+            <em>can.TransactionTimeOut = 200; </em> <br> 
+            // Pour connaître la durée maximum accordée à une transaction <br>
+            <em> ushort time = can.TransactionTimeOut;</em>
+          </td>
         </tr>
       </table>
 
@@ -408,7 +439,7 @@ namespace test
   <!-- FOOTER  -->
   <div id="footer_wrap" class="outer">
     <footer class="inner ">
-      <p class="copyright">Description de la classe <strong><em>MCP242x</em></strong> développée en C# sous .NETMF 4.3 pour les cartes Netduino
+      <p class="copyright">Classe <strong><em>MCP242x</em></strong> développée en C# sous .NETMF 4.3 pour les cartes Netduino
         et FEZ (PANDA, COBRA...) maintained by <a href="https://github.com/WebGE">WebGE</a></p>
       <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
     </footer>
