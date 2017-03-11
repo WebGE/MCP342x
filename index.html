@@ -401,7 +401,7 @@ namespace NetduinoMCP2424
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>TransactionTimeOut</strong></td>
-          <td>Fixe ou retourne le temps (en ms) accordé à la transaction avant la génération d'une System.IO.Exception.
+          <td>Fixe ou retourne le temps (en ms) accordé à la transaction avant la génération d'une System.IO.Exception. 1000ms par défaut.
              <br><br>
             <strong>Exemples</strong><br> 
             // Pour régler la durée maximum d'une transaction à 200ms. <br>
@@ -424,7 +424,7 @@ namespace NetduinoMCP2424
           <td><strong>void</strong> ConfigDevice(<strong>byte</strong><em> value</em>)</strong>
           </td>
           <td>
-            <p>Configure le circuit avec : <br>value = RDY C1 C0 /O_C S1 S0 G1 G0 <br>Remarque : value = 00010000 (default)</p>
+            <p>Configure le circuit avec : <br>value = RDY C1 C0 /O_C S1 S0 G1 G0 <br>Remarque : value = 00010000 (par default)</p>
             <ul>
               <li><strong>RDY : </strong>En lecture, fin de la conversion. En écriture, déclenche une conversion</li>
               <li><strong>C1, C0 : </strong>Choix du canal</li>
@@ -434,7 +434,7 @@ namespace NetduinoMCP2424
             </ul>
             <br>
              <strong>Note</strong> <br> Une exception System.IO.IOException est générée avec le message "I2CBus
-            error SLA" en cas d'échec de la communication.
+            error SLA" en cas d'échec de la communication. SLA est l'adresse du circuit. 
           </td>
         </tr>
         <tr>
@@ -446,7 +446,7 @@ namespace NetduinoMCP2424
               sélectionnée (en V) </p>
             <br> <strong>Notes</strong> <br>- Une exception <em>System.IO.IOException</em> est générée avec le message "I2CBus
             error SLA" en cas d'échec de la communication. <br>- Une exception <em>System.IO.IOException</em> est générée avec le message 
-            "No sample on SLA" si la lecture du résultat de la conversion échoue.   
+            "No sample on SLA" si la lecture du résultat de la conversion échoue. SLA est l'adresse du circuit.   
           </td>
         </tr>
       </table>
