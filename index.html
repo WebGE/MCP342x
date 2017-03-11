@@ -216,12 +216,11 @@
         <li><strong>Utiliser</strong> le gestionnaire de paquets NuGet pour <strong>ajouter</strong> la bibliothèque <strong>MicroToolsKit</strong>          (
           <a href="https://www.nuget.org/packages/WebGE.MicroToolsKit/ " target="_blank ">nuget.org</a>) dans le projet.
           (Dans l'explorateur de solution, clic droit sur les <em>Références</em> du projet puis choisir <em>Gérer les packages NuGet...</em>.<strong> Installer</strong>          le paquet.)</li>
-        <li><strong>Ajouter</strong> l'espace de noms <strong>Microtoolskit.Hardware.IO</strong> dans l'en-tête du fichier
-          source.
+        <li><strong>Ajouter</strong> l'espace de noms <strong>Microtoolskit.Hardware.IO</strong> dans l'en-tête du fichier source.
         </li>
         <li><strong>Créer</strong> un objet en utilisant le constructeur <em>MCP342x</em>.</li>
-        <li><strong>Utiliser</strong> la méthode <strong>ReadVolts</strong> pour déclencher une mesure de la tension présente sur l'une
-          des entrées du convertisseur analogique numérique.</li>
+        <li><strong>Utiliser</strong> la méthode <strong>ReadVolts</strong> pour déclencher une mesure de la tension présente
+          sur l'une des entrées du convertisseur analogique numérique.</li>
       </ol>
       <hr>
       <p><strong>Exemple</strong></p>
@@ -285,16 +284,11 @@ namespace test
             <p>Sélection du canal sur lequel sera effectuée la conversion.
             </p>
             <ul>
-              <li><strong>Ch1</strong></li>( par défaut)
+              <li><strong>Ch1</strong> (par défaut)</li>
               <li><strong>Ch2</strong></li>
               <li><strong>Ch3</strong></li>
               <li><strong>Ch4</strong></li>
-            </ul> <br>
-						<strong>Exemples</strong><br>
-            // Pour relier le canal CH2 à l'entrée du can. <br>
-            <em>can.CHannel = MCP342x.Channel.Ch2; </em> <br>
-            // Pour connaître le canal relié au can <br>
-            <em>byte canal = (byte)can.CHannel; </em>					
+            </ul>
           </td>
         </tr>
         <tr>
@@ -304,7 +298,7 @@ namespace test
             <p>Un échantillonnage ou échantillonnage continu.</p>
             <ul>
               <li><strong>OneShot</strong> : réduit la consommation</li>
-              <li><strong> Continuous</strong></li>
+              <li><strong> Continuous</strong> (par défaut)</li>
             </ul>
           </td>
         </tr>
@@ -314,7 +308,7 @@ namespace test
           <td>
             <p>Facteur d'amplification du signal avant une conversion.</p>
             <ul>
-              <li><strong>x1</strong></li>
+              <li><strong>x1</strong> (par défaut)</li>
               <li><strong>x2</strong></li>
               <li><strong>x4</strong></li>
               <li><strong>x8</strong></li>
@@ -327,7 +321,7 @@ namespace test
           <td>
             <p>Régle la résolution du convertisseur et la fréquence d'échantillonage Fe :</p>
             <ul>
-              <li><strong>TwelveBits</strong> => Fe = 240 SPS</li>
+              <li><strong>TwelveBits</strong> => Fe = 240 SPS (par défaut)</li>
               <li><strong>FourteenBits</strong> => Fe = 60 SPS</li>
               <li><strong>SixteenBits</strong> => Fe =15 SPS</li>
               <li><strong>EighteenBits</strong> => Fe = 3,75 SPS</li>
@@ -346,7 +340,11 @@ namespace test
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>Resolution</strong></td>
-          <td>Fixe ou retourne la résolution du convertisseur.</td>
+          <td>Fixe ou retourne la résolution du convertisseur.<br>
+            <strong>Exemples</strong><br> // Pour relier le canal CH2 à l'entrée du can. <br>
+            <em>can.CHannel = MCP342x.Channel.Ch2; </em> <br> // Pour connaître le canal relié au can <br>
+            <em>byte canal = (byte)can.CHannel; </em>
+          </td>
         </tr>
         <tr>
           <td><img src="images/Property_20x.png"></td>
