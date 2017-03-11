@@ -285,16 +285,17 @@ namespace test
             <p>Sélection du canal sur lequel sera effectuée la conversion.
             </p>
             <ul>
-              <li><strong>Ch1</strong></li>
+              <li><strong>Ch1</strong></li>( par défaut)
               <li><strong>Ch2</strong></li>
               <li><strong>Ch3</strong></li>
               <li><strong>Ch4</strong></li>
             </ul>
             <br> <br>
 						<strong>Exemples</strong><br>
-            <em>can.CHannel = MCP342x.Channel.Ch2; // Relie le canal CH2 sur l'entrée du can.</em>
-            <em>byte canal = (byte)can.CHannel; // canal contient le numéro de l'entrée reliée au can </em>
-					
+            // Pour relier le canal CH2 à l'entrée du can. <br>
+            <em>can.CHannel = MCP342x.Channel.Ch2; </em> <br>
+            // Pour connaître le canal relié au can <br>
+            <em>byte canal = (byte)can.CHannel; </em>					
           </td>
         </tr>
         <tr>
