@@ -442,9 +442,9 @@ namespace NetduinoMCP2424
             <p>Configure le circuit si des paramètres ont été changés. Renvoie la valeur de la tension présente sur l'entrée
               sélectionnée (en V) </p><br> Note : Une exception System.IO.IOException est générée avec le message "I2CBus
             error + SLA" en cas d'échec de la communication. <br>
-            <br> Note : Une exception System.IO.IOException est générée avec le message "I2CBus
-            error + SLA" en cas d'échec de la communication. <br>
-            
+            <br> Notes <br> Une exception System.IO.IOException est générée avec le message "I2CBus
+            error + SLA" en cas d'échec de la communication. <br> Une exception System.IO.IOException est générée avec le message 
+            "No sample on + SLA"" si la lecture du résultat de la conversion échoue.   
           </td>
         </tr>
       </table>
