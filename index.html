@@ -246,7 +246,6 @@ namespace test
             can.Gain = MCP342x.PGA_Gain.x4;
             double gain = System.Math.Pow(2, (byte)can.Gain);
 
-
             while (true)
             {
                 Debug.Print("Continuous on channel " + canal + " " + "Gain: " + gain + " " + "Resolution: " + resolution);
