@@ -1,5 +1,7 @@
 # MCP342x
 
+<strong>Description</strong>
+-------------------------------------
 Source code.
 
 A <strong>.NETMF 4.3 class</strong> write for a MCP3424 circuit : <strong>18-Bit, Multi-Channel ΔΣ Analog-to-Digital Converter with I2C Interface and On-Board Reference class</strong>. 
