@@ -1,4 +1,4 @@
-# MCP342x
+# MCP342x .NetMF Class
 
 <strong>Description</strong>
 -------------------------------------
