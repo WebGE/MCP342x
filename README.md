@@ -37,6 +37,10 @@ This class is also in the <a href="https://www.nuget.org/packages/WEBGE.Microtoo
 </li>
 </ul>
 
+<strong>Assembly</strong>
+--------------------------
+<img src="img/MCP3424.jpg" />
+
 <strong>Keywords</strong>
 ----------------------------
 I²C Bus, Netduino, FEZ, PANDA, COBRA, C#, NETMF, Visual Studio.
