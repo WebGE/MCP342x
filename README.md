@@ -30,7 +30,7 @@ This class is also in the <a href="https://www.nuget.org/packages/WEBGE.Microtoo
 <li><strong>MCP342x</strong>
 <ul>
 <li><strong>MCP342x</strong> : .NetMF class</li>
-<img src="img/MCP342x.PNG" />
+<img src="img/MCP342x.png" />
 <li><strong>Netduino</strong> : class test program for Netduino board</li>
 <li><strong>FezPanda</strong> : class test program for Fez Panda board</li>
 </ul>
