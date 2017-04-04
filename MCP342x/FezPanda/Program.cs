@@ -2,7 +2,6 @@
 
 using System.Threading;
 using Microsoft.SPOT;
-
 using testMicroToolsKit.Hardware.IO;
 using Microtoolskit.Hardware.IO;
 using Microtoolskit.Hardware.Displays;
@@ -23,7 +22,6 @@ namespace FezPanda
             ELCD162 lcd = new ELCD162("com1");
             lcd.Init(); lcd.ClearScreen(); lcd.CursorOff();
 #endif
-
 
             // One Shot Conversion
 #if LCD
@@ -57,7 +55,11 @@ namespace FezPanda
                 }
             }
 
-            // Continuous Conversion mode       
+            // Continuous Conversion mode 
+#if LCD
+            lcd.ClearScreen();
+            lcd.PutString("Continuous Conv.");
+#endif
             can.Mode = MCP342x.ConversionMode.Continuous;
             byte j = 1;
 
@@ -74,7 +76,7 @@ namespace FezPanda
 #if LCD
                         lcd.ClearScreen(); lcd.SetCursor(0, 1); lcd.PutString(ex.Message); Thread.Sleep(1000);
 #else
-                            Debug.Print(ex.Message);
+                        Debug.Print(ex.Message);
 #endif
                     }
                     finally
@@ -94,7 +96,7 @@ namespace FezPanda
 #if LCD
                         lcd.ClearScreen(); lcd.SetCursor(0, 1); lcd.PutString(ex.Message); Thread.Sleep(1000);
 #else
-                            Debug.Print(ex.Message);
+                        Debug.Print(ex.Message);
 #endif
                     }
                     finally
@@ -107,15 +109,20 @@ namespace FezPanda
 
                 try
                 {
+#if LCD
+                    lcd.ClearScreen();
+                    lcd.SetCursor(0, 0); lcd.PutString("Ch" + (can.CHannel + 1) + " U=" + can.ReadVolts().ToString("F2") + "V");
+#else
                     Debug.Print("Continuous on channel " + (can.CHannel + 1) + " =>Tension= " + can.ReadVolts().ToString("F2") + "   " +
-                        "Resol: " + resolution + "-bit " + "Gain: " + gain);
+                    "Resol: " + resolution + "-bit " + "Gain: " + gain);
+#endif
                 }
                 catch (System.IO.IOException ex)
                 {
 #if LCD
                     lcd.ClearScreen(); lcd.SetCursor(0, 0); lcd.PutString(ex.Message);
 #else
-                            Debug.Print(ex.Message);
+                    Debug.Print(ex.Message);
 #endif
                 }
                 finally
