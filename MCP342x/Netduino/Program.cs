@@ -30,15 +30,17 @@ namespace Netduino
             lcd.PutString("One Shot Conv.");
             Thread.Sleep(2000);
 #endif
-            for (int i = 1; i < 4; i++)
-            {
-                can.Mode = MCP342x.ConversionMode.OneShot;
-                double resolution = Resolution(can.Resolution);
-                double gain = System.Math.Pow(2, (byte)can.Gain);
+            can.Mode = MCP342x.ConversionMode.OneShot;
+            double resolution = Resolution(can.Resolution);
+            double gain = System.Math.Pow(2, (byte)can.Gain);
 
+            for (int i = 0; i < 3; i++)
+            {
+               
                 try
                 {
-                    Debug.Print("Single on channel " + i + " => Tension= " + can.ReadVolts().ToString("F2") + "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
+                    Debug.Print("Single on channel " + (i + 1) + " => Tension= " + can.ReadVolts().ToString("F2") + "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
+                    can.CHannel = (MCP342x.Channel)(i);
                 }
                 catch (System.IO.IOException ex)
                 {
@@ -63,8 +65,6 @@ namespace Netduino
             while (true)
             {
                 byte j = 0;
-                double resolution = Resolution(can.Resolution);
-                double gain = System.Math.Pow(2, (byte)can.Gain);
 
                 if (commut)
                 {

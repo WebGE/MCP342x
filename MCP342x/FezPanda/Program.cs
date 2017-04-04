@@ -1,11 +1,11 @@
-using System;
+#define LCD
+
 using System.Threading;
 using Microsoft.SPOT;
-using Microsoft.SPOT.Hardware;
-using GHI.Pins;
 
 using testMicroToolsKit.Hardware.IO;
 using Microtoolskit.Hardware.IO;
+using Microtoolskit.Hardware.Displays;
 
 
 namespace FezPanda
@@ -14,24 +14,42 @@ namespace FezPanda
     {
         public static void Main()
         {
+            byte Nb = 3; // Channels on test in single mode
+            bool commut = true;
+
             MCP342x can = new MCP342x();
             PCF8574 leds = new PCF8574();
-            bool commut = false;
+#if LCD
+            ELCD162 lcd = new ELCD162("com1");
+            lcd.Init(); lcd.ClearScreen(); lcd.CursorOff();
+#endif
+
 
             // One Shot Conversion
-            for (int i = 1; i < 4; i++)
+#if LCD
+            lcd.PutString("One Shot Conv.");
+            Thread.Sleep(2000);
+#endif
+            can.Mode = MCP342x.ConversionMode.OneShot;
+            double resolution = Resolution(can.Resolution);
+            double gain = System.Math.Pow(2, (byte)can.Gain);
+
+            for (int i = 0; i < Nb; i++)
             {
-                can.Mode = MCP342x.ConversionMode.OneShot;
-                double resolution = Resolution(can.Resolution);
-                double gain = System.Math.Pow(2, (byte)can.Gain);
 
                 try
                 {
-                    Debug.Print("Single on channel " + i + " => Tension= " + can.ReadVolts().ToString("F2") + "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
+                    Debug.Print("Single on channel " + (can.CHannel + 1) + " => Tension= " + can.ReadVolts().ToString("F2") +
+                        "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
+                    can.CHannel = (MCP342x.Channel)(i + 1);
                 }
                 catch (System.IO.IOException ex)
                 {
+#if LCD
+                    lcd.ClearScreen(); lcd.SetCursor(0, 0); lcd.PutString(ex.Message);
+#else 
                     Debug.Print(ex.Message);
+#endif
                 }
                 finally
                 {
@@ -41,30 +59,64 @@ namespace FezPanda
 
             // Continuous Conversion mode       
             can.Mode = MCP342x.ConversionMode.Continuous;
+            byte j = 1;
 
             while (true)
             {
-                byte j;
-                double resolution = Resolution(can.Resolution);
-                double gain = System.Math.Pow(2, (byte)can.Gain);
-
                 if (commut)
                 {
-                    leds.Write(0xF0); commut = false;
-                    can.CHannel = MCP342x.Channel.Ch1; j = 1;
+                    try
+                    {
+                        leds.Write(0xF0);
+                    }
+                    catch (System.IO.IOException ex)
+                    {
+#if LCD
+                        lcd.ClearScreen(); lcd.SetCursor(0, 1); lcd.PutString(ex.Message); Thread.Sleep(1000);
+#else
+                            Debug.Print(ex.Message);
+#endif
+                    }
+                    finally
+                    {
+                        commut = false;
+                        can.CHannel = (MCP342x.Channel)(j - 1); j = 2;
+                    }
                 }
                 else
                 {
-                    leds.Write(0x0F); commut = true;
-                    can.CHannel = MCP342x.Channel.Ch2; j = 2;
+                    try
+                    {
+                        leds.Write(0x0F);
+                    }
+                    catch (System.IO.IOException ex)
+                    {
+#if LCD
+                        lcd.ClearScreen(); lcd.SetCursor(0, 1); lcd.PutString(ex.Message); Thread.Sleep(1000);
+#else
+                            Debug.Print(ex.Message);
+#endif
+                    }
+                    finally
+                    {
+                        commut = true;
+                        can.CHannel = (MCP342x.Channel)(j - 1); j = 1;
+                    }
                 }
+
+
                 try
                 {
-                    Debug.Print("Continuous on channel " + j + " =>Tension= " + can.ReadVolts().ToString("F2") + "   " + "Resol: " + resolution + "-bit " + "Gain: " + gain);
+                    Debug.Print("Continuous on channel " + (can.CHannel + 1) + " =>Tension= " + can.ReadVolts().ToString("F2") + "   " +
+                        "Resol: " + resolution + "-bit " + "Gain: " + gain);
                 }
                 catch (System.IO.IOException ex)
                 {
-                    Debug.Print(ex.Message);
+#if LCD
+                    lcd.ClearScreen(); lcd.SetCursor(0, 0); lcd.PutString(ex.Message);
+#else
+                            Debug.Print(ex.Message);
+#endif
                 }
                 finally
                 {
