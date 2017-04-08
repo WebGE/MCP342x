@@ -49,6 +49,10 @@ To come up
 ----------------------------
 I²C Bus, Netduino, FEZ, PANDA, COBRA, C#, NETMF, Visual Studio.
 
+<strong>Tested on</strong>
+-------------------
+Fez Panda III, Netduino plus 2
+
 <strong>Todo list</strong>
 -------------------
 Test negative voltage
