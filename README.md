@@ -59,11 +59,11 @@ Test negative voltage
 
 <strong>To get started<strong>
 --------------------
-See <a href="https://webge.github.io/MCP342x/" target="_blank">MCP342x GitHub Page</a> (in french).
+See <a href="https://webge.github.io/MCP342x/" target="_blank">MCP342x GitHub Page</a> (in French).
 
 <strong>Wiki</strong>
 --------------------
-See <a href="https://csharpembarquenetduino.wikispaces.com/Home" target="_blank">Netduino et FEZ</a> (in french).
+See <a href="https://csharpembarquenetduino.wikispaces.com/Home" target="_blank">Netduino et FEZ</a> (in French).
 
 <strong>Project site</strong>
 --------------------
