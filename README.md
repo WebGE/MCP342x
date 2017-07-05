@@ -12,14 +12,14 @@ This class is also in the <a href="https://www.nuget.org/packages/WEBGE.Microtoo
 
 <strong>Hardware</strong>
 ---------------------
-<strong> Targets </strong>: Netduino, Netduino plus 2, Netduino 3, FEZ PANDA 3 et COBRA 3.
+<strong> Targets </strong>: Netduino, Netduino plus 2, Netduino 3, FEZ PANDA 3 and COBRA 3.
 
 <strong>Software</strong>
 ---------------------
 <ul>
 <li><strong>Language</strong> : C#</li>
 <li><strong>Framework used</strong> : .NETMF 4.3</li>
-<li><strong>IDE</strong> : Visual Studio Community 2015</li>
+<li><strong>IDE</strong> : Visual Studio Community 2013 (2015)</li>
 <li><strong>xml</strong> : documentation inside class</li> 
 <li><strong>Exception</strong> : if transaction failed</li>
 </ul>
