@@ -49,12 +49,14 @@
           </ol>
         </li>
         <li>LES FASCICULES
-					<ol>
-						<li><a href="https://csharpembarquenetduino.wikispaces.com/5a.+Les+fascicules+d%27exemples++cod%C3%A9s+en+CSharp+pour+la+carte+Netduino" target="_blank">Exemples de code pour les cartes Netduino</a></li>
-						<li><a href="https://csharpembarquenetduino.wikispaces.com/5b.+Le+fascicule+d%27exemples++cod%C3%A9s+en+CSharp+pour+les+cartes+Fez+%28PANDA+3%2C+etc%29" target="_blank">Exemples de code pour les cartes FEZ</a> </li>
-					</ol>
-				</li>
-				<li><a href="https://csharpembarquenetduino.wikispaces.com/6.+MicroToolsKit+library" target="_blank">La page du projet MicroToolsKit</a></li>
+          <ol>
+            <li><a href="https://csharpembarquenetduino.wikispaces.com/5a.+Les+fascicules+d%27exemples++cod%C3%A9s+en+CSharp+pour+la+carte+Netduino"
+                target="_blank">Exemples de code pour les cartes Netduino</a></li>
+            <li><a href="https://csharpembarquenetduino.wikispaces.com/5b.+Le+fascicule+d%27exemples++cod%C3%A9s+en+CSharp+pour+les+cartes+Fez+%28PANDA+3%2C+etc%29"
+                target="_blank">Exemples de code pour les cartes FEZ</a> </li>
+          </ol>
+        </li>
+        <li><a href="https://csharpembarquenetduino.wikispaces.com/6.+MicroToolsKit+library" target="_blank">La page du projet MicroToolsKit</a></li>
       </ol>
       <hr>
       <h3>1. LE MATERIEL</h3>
@@ -197,10 +199,12 @@
       Des wikis sont dédiés aux cartes Netduino et GHI Fez. Ils proposent au téléchargement :
       <ul>
         <li><strong>Deux fascicules</strong> d'exemples de code pour les cartes <strong>Netduino</strong>.
-          <a href="https://csharpembarquenetduino.wikispaces.com/5a.+Les+fascicules+d%27exemples++cod%C3%A9s+en+CSharp+pour+la+carte+Netduino" target="_blank">[lien]</a>
+          <a href="https://csharpembarquenetduino.wikispaces.com/5a.+Les+fascicules+d%27exemples++cod%C3%A9s+en+CSharp+pour+la+carte+Netduino"
+            target="_blank">[lien]</a>
         </li>
         <li><strong>Un fascicule</strong> d'exemples de code pour les cartes <strong>FEZ</strong>.
-          <a href="https://csharpembarquenetduino.wikispaces.com/5b.+Le+fascicule+d%27exemples++cod%C3%A9s+en+CSharp+pour+les+cartes+Fez" target="_blank">[lien]</a>
+          <a href="https://csharpembarquenetduino.wikispaces.com/5b.+Le+fascicule+d%27exemples++cod%C3%A9s+en+CSharp+pour+les+cartes+Fez"
+            target="_blank">[lien]</a>
         </li>
       </ul>
       <hr>
@@ -278,8 +282,8 @@ namespace test
           <td><img src="images/Method_16x.png"></td>
           <td><strong>Mcp342x</strong>(<strong>UInt16</strong> <em>SLA</em>, <strong>Int16</strong> <em>Frequency</em> )</td>
           <td>Constructeur de base. <br> Par défaut : Channel = CH1, Resolution = 12 bit, Conversion = Continuous, Gain = 1 <br>
-          <br>Instancie un objet "MCP342x ". <br><strong>SLA : </strong>adresse du module DFROBOT comprise entre 0x68 et 0x6B => <strong>SLA</strong>=
-            0x68 (par défaut)<br>
+            <br>Instancie un objet "MCP342x ". <br><strong>SLA : </strong>adresse du module DFROBOT comprise entre 0x68 et
+            0x6B => <strong>SLA</strong>= 0x68 (par défaut)<br>
             <strong>Frequency: </strong>>Féquence du signal SCL = 400kHz. (par défaut)<br><br>
             <strong>Exemple</strong><br>
             <em>MCP342x can = new MCP342x();</em>
@@ -357,52 +361,40 @@ namespace test
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>Resolution</strong></td>
-          <td>Fixe ou retourne la résolution du convertisseur. <br>
-          Type : SampleRate
+          <td>Fixe ou retourne la résolution du convertisseur. <br> Type : SampleRate
             <br><br>
-            <strong>Exemples</strong><br> 
-            // Pour régler la résolution du can à 14 bits. <br>
-            <em>can.Resolution = MCP342x.SampleRate.FourteenBits;</em> <br> 
-            // Pour connaître la résolution du can <br>
+            <strong>Exemples</strong><br> // Pour régler la résolution du can à 14 bits. <br>
+            <em>can.Resolution = MCP342x.SampleRate.FourteenBits;</em> <br> // Pour connaître la résolution du can <br>
             <em>int resolution = 12 + 2*(byte)can.Resolution;</em>
           </td>
         </tr>
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>Gain</strong></td>
-          <td>Fixe ou retourne le gain appliqué au signal sur l'entrée sélectionnée. <br>
-          Type : PGA_Gain
-             <br><br>
-            <strong>Exemples</strong><br> 
-            // Pour régler le gain de l'amplificateur à x4. <br>
-            <em>can.Gain = MCP342x.PGA_Gain.x4;</em> <br> 
-            // Pour connaître la valeur du gain de l'amplificateur<br>
+          <td>Fixe ou retourne le gain appliqué au signal sur l'entrée sélectionnée. <br> Type : PGA_Gain
+            <br><br>
+            <strong>Exemples</strong><br> // Pour régler le gain de l'amplificateur à x4. <br>
+            <em>can.Gain = MCP342x.PGA_Gain.x4;</em> <br> // Pour connaître la valeur du gain de l'amplificateur<br>
             <em>double gain = System.Math.Pow(2, (byte)can.Gain);</em>
           </td>
         </tr>
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>CHannel</strong></td>
-          <td>Fixe ou retourne le canal sélectionné. <br>
-          Type : Channel
-             <br><br>
-            <strong>Exemples</strong><br> 
-            // Pour relier le canal CH2 à l'entrée du can. <br>
-            <em>can.CHannel = MCP342x.Channel.Ch2; </em> <br> 
-            // Pour connaître le canal relié au can <br>
+          <td>Fixe ou retourne le canal sélectionné. <br> Type : Channel
+            <br><br>
+            <strong>Exemples</strong><br> // Pour relier le canal CH2 à l'entrée du can. <br>
+            <em>can.CHannel = MCP342x.Channel.Ch2; </em> <br> // Pour connaître le canal relié au can <br>
             <em>double canal = System.Math.Pow(2, (double)can.CHannel);</em>
           </td>
         </tr>
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>Mode</strong></td>
-          <td>Fixe ou retourne le mode de conversion. <br>
-          Type : ConversionMode
-             <br><br>
-            <strong>Exemples</strong><br> 
-            // Pour régler le mode de conversion sur One Shot . <br>
-            <em> can.Mode = MCP342x.ConversionMode.OneShot; </em> <br> 
-            // Pour connaître le mode de conversion <br>
+          <td>Fixe ou retourne le mode de conversion. <br> Type : ConversionMode
+            <br><br>
+            <strong>Exemples</strong><br> // Pour régler le mode de conversion sur One Shot . <br>
+            <em> can.Mode = MCP342x.ConversionMode.OneShot; </em> <br> // Pour connaître le mode de conversion <br>
             <em>byte mode = (byte)can.Mode;</em>
           </td>
         </tr>
@@ -410,13 +402,11 @@ namespace test
         <tr>
           <td><img src="images/Property_20x.png"></td>
           <td><strong>TransactionTimeOut</strong></td>
-          <td>Fixe ou retourne le temps (en ms) accordé à la transaction avant la génération d'une System.IO.Exception. 1000ms par défaut. <br>
-          Type : ushort
-             <br><br>
-            <strong>Exemples</strong><br> 
-            // Pour régler la durée maximum d'une transaction à 200ms. <br>
-            <em>can.TransactionTimeOut = 200; </em> <br> 
-            // Pour connaître la durée maximum accordée à une transaction <br>
+          <td>Fixe ou retourne le temps (en ms) accordé à la transaction avant la génération d'une System.IO.Exception. 1000ms
+            par défaut. <br> Type : ushort
+            <br><br>
+            <strong>Exemples</strong><br> // Pour régler la durée maximum d'une transaction à 200ms. <br>
+            <em>can.TransactionTimeOut = 200; </em> <br> // Pour connaître la durée maximum accordée à une transaction <br>
             <em> ushort time = can.TransactionTimeOut;</em>
           </td>
         </tr>
@@ -443,8 +433,8 @@ namespace test
               <li><strong>G1, G0 : </strong>Réglage du gain</li>
             </ul>
             <br>
-             <strong>Note</strong> <br> Une exception System.IO.IOException est générée avec le message "I2CBus
-            error SLA" en cas d'échec de la communication. SLA est l'adresse du circuit. 
+            <strong>Note</strong> <br> Une exception System.IO.IOException est générée avec le message "I2CBus error SLA"
+            en cas d'échec de la communication. SLA est l'adresse du circuit.
           </td>
         </tr>
         <tr>
@@ -455,8 +445,8 @@ namespace test
             <p>Configure le circuit si des paramètres ont été changés. Renvoie la valeur de la tension présente sur l'entrée
               sélectionnée (en V) </p>
             <br> <strong>Notes</strong> <br>- Une exception <em>System.IO.IOException</em> est générée avec le message "I2CBus
-            error SLA" en cas d'échec de la communication. <br>- Une exception <em>System.IO.IOException</em> est générée avec le message 
-            "No sample on SLA" si la lecture du résultat de la conversion échoue. SLA est l'adresse du circuit.   
+            error SLA" en cas d'échec de la communication. <br>- Une exception <em>System.IO.IOException</em> est générée
+            avec le message "No sample on SLA" si la lecture du résultat de la conversion échoue. SLA est l'adresse du circuit.
           </td>
         </tr>
       </table>
@@ -466,8 +456,8 @@ namespace test
   <!-- FOOTER  -->
   <div id="footer_wrap" class="outer">
     <footer class="inner ">
-      <p class="copyright">Classe <strong><em>MCP242x</em></strong> développée en C# sous .NETMF 4.3 pour les cartes Netduino
-        et FEZ (PANDA, COBRA...) maintained by <a href="https://github.com/WebGE">WebGE</a></p>
+      <p class="copyright">Classe <strong><em>MCP242x</em></strong> développée en C# sous .NETMF 4.3 pour les cartes Netduino et FEZ (PANDA, COBRA...)
+        maintained by <a href="https://github.com/WebGE">WebGE</a></p>
       <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
     </footer>
   </div>
