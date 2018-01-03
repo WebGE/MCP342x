@@ -43,7 +43,7 @@ This class is also in the <a href="https://www.nuget.org/packages/WEBGE.Microtoo
 
 <strong>Video</strong>
 -------------------------
-To come up
+<a href="https://www.youtube.com/watch?v=rssATy6FkfU" target="_blank">On Youtube</a>
 
 <strong>Keywords</strong>
 ----------------------------
@@ -51,7 +51,7 @@ I²C Bus, Netduino, FEZ, PANDA, COBRA, C#, NETMF, Visual Studio.
 
 <strong>Tested on</strong>
 -------------------
-Fez Panda III, Netduino plus 2
+Fez Panda III, Netduino plus 2, BrainPad
 
 <strong>Todo list</strong>
 -------------------
