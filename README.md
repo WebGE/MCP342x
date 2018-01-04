@@ -29,10 +29,12 @@ This class is also in the <a href="https://www.nuget.org/packages/WEBGE.Microtoo
 <ul>
 <li><strong>MCP342x</strong>
 <ul>
-<li><strong>MCP342x</strong> : .NetMF class</li>
+<li><strong>MCP342x</strong> : .NetMF class source</li>
 <img src="img/MCP342x.png" />
 <li><strong>Netduino</strong> : class test program for Netduino board</li>
 <li><strong>FezPanda</strong> : class test program for Fez Panda board</li>
+<li><strong>BrainPad</strong> : class test program for BrainPad board</li>
+<li><strong>BrainPadLibrary</strong> : class library for BrainPad board</li>
 </ul>
 </li>
 </ul>
