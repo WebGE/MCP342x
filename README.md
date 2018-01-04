@@ -45,11 +45,11 @@ This class is also in the <a href="https://www.nuget.org/packages/WEBGE.Microtoo
 
 <strong>Video</strong>
 -------------------------
-<a href="https://www.youtube.com/watch?v=rssATy6FkfU" target="_blank">On Youtube</a>
+See <a href="https://www.youtube.com/watch?v=rssATy6FkfU" target="_blank">on YouTube</a>
 
 <strong>Keywords</strong>
 ----------------------------
-I²C Bus, Netduino, FEZ, PANDA, COBRA, C#, NETMF, Visual Studio.
+I²C Bus, Netduino, FEZ, PANDA, COBRA, BrainPad, C#, NETMF, Visual Studio.
 
 <strong>Tested on</strong>
 -------------------
