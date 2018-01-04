@@ -24,12 +24,12 @@ This class is also in the <a href="https://www.nuget.org/packages/WEBGE.Microtoo
 <li><strong>Exception</strong> : if transaction failed</li>
 </ul>
 
-<strong> Visual Studio solution</strong>
+<strong>Visual Studio solution</strong>
 -------------------------------------
 <ul>
 <li><strong>MCP342x</strong>
 <ul>
-<li><strong>MCP342x</strong> : .NetMF class (source code)</li>
+<li><strong>MCP342x</strong> : .NetMF v4.3 class (source code)</li>
 <img src="img/MCP342x.png" />
 <li><strong>Netduino</strong> : class test program for Netduino board</li>
 <li><strong>FezPanda</strong> : class test program for Fez Panda board</li>
