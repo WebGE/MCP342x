@@ -43,7 +43,7 @@ This class is also in the <a href="https://www.nuget.org/packages/WEBGE.Microtoo
 --------------------------
 <img src="img/MCP3424.jpg" />
 
-<strong>Video on YouTube</strong>
+<strong>Videos on YouTube</strong>
 -------------------------
 - <a href="https://www.youtube.com/watch?v=rssATy6FkfU" target="_blank">BrainPad and DFR0316 DFROBOT Module</a>
 - <a href="https://youtu.be/Ds21iNaIAbM" target="_blank">BrainPad and ADC3 click MikroElektronika Module</a>
