@@ -17,8 +17,10 @@
       <a id="forkme_banner" href="https://github.com/WebGE/MCP342x">View on GitHub</a>
 
       <h1 id="project_title">MCP342x : 18-Bit, Multi-Channel ΔΣ Analog-to-Digital Converter with I²C Interface and On-Board Reference</h1>
-      <h2 id="project_tagline">Description de la classe <strong><em>MCP342x</em></strong> développée en C# sous .NETMF 4.3 pour les cartes Netduino
-        et GHI FEZ (PANDA, COBRA...)</h2>
+      <h2 id="project_tagline">Description de la classe
+        <strong>
+          <em>MCP342x</em>
+        </strong> développée en C# sous .NETMF 4.3 pour les cartes Netduino et GHI FEZ (PANDA, COBRA...)</h2>
 
       <section id="downloads">
         <a class="zip_download_link" href="https://github.com/WebGE/MCP342x/zipball/master">Download this project as a .zip file</a>
@@ -36,27 +38,46 @@
         <li>LE MATERIEL
           <ol>
             <li>Les circuits 342x: 18-Bit, Multi-Channel ΔΣ Analog-to-Digital Converter with I²C Interface and On-Board Reference</li>
-            <li><a href="#DUINO">Les cartes Netduino</a></li>
-            <li><a href="#FEZ">Les cartes FEZ</a> </li>
+            <li>
+              <a href="#DUINO">Les cartes Netduino</a>
+            </li>
+            <li>
+              <a href="#FEZ">Les cartes FEZ</a>
+            </li>
           </ol>
         </li>
-        <li><a href="#LOG">LE LOGICIEL</a>
+        <li>
+          <a href="#LOG">LE LOGICIEL</a>
           <ol>
-            <li><a href="#REP">Contenu du répertoire proposé au téléchargement</a></li>
-            <li><a href="#NUGET">Le NuGet MicroToolsKit</a></li>
-            <li><a href="#WIKI">Les Wikis</a></li>
-            <li><a href="#DESC">Description et utilisation de la classe MCP342x</a></li>
+            <li>
+              <a href="#REP">Contenu du répertoire proposé au téléchargement</a>
+            </li>
+            <li>
+              <a href="#NUGET">Le NuGet MicroToolsKit</a>
+            </li>
+            <li>
+              <a href="#WIKI">Les Wikis</a>
+            </li>
+            <li>
+              <a href="#DESC">Description et utilisation de la classe MCP342x</a>
+            </li>
           </ol>
         </li>
         <li>LES FASCICULES
-					<ol>
-						<li><a href="https://csharpembarquenetduino.wikispaces.com/5a.+Les+fascicules+d%27exemples++cod%C3%A9s+en+CSharp+pour+la+carte+Netduino"
-							 target="_blank">Exemples de code pour les cartes Netduino</a></li>
-						<li><a href="https://csharpembarquenetduino.wikispaces.com/5b.+Le+fascicule+d%27exemples++cod%C3%A9s+en+CSharp+pour+les+cartes+Fez+%28PANDA+3%2C+etc%29"
-							 target="_blank">Exemples de code pour les cartes FEZ</a> </li>
-					</ol>
-				</li>
-        <li><a href="https://csharpembarquenetduino.wikispaces.com/6.+MicroToolsKit+library" target="_blank">La page du projet MicroToolsKit</a></li>
+          <ol>
+            <li>
+              <a href="https://csharpembarquenetduino.wikispaces.com/5a.+Les+fascicules+d%27exemples++cod%C3%A9s+en+CSharp+pour+la+carte+Netduino"
+                target="_blank">Exemples de code pour les cartes Netduino</a>
+            </li>
+            <li>
+              <a href="https://csharpembarquenetduino.wikispaces.com/5b.+Le+fascicule+d%27exemples++cod%C3%A9s+en+CSharp+pour+les+cartes+Fez+%28PANDA+3%2C+etc%29"
+                target="_blank">Exemples de code pour les cartes FEZ</a>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="https://csharpembarquenetduino.wikispaces.com/6.+MicroToolsKit+library" target="_blank">La page du projet MicroToolsKit</a>
+        </li>
       </ol>
       <hr>
       <h3>1. LE MATERIEL</h3>
@@ -64,109 +85,206 @@
       <h4>1.1 Les circuits 342x: 18-Bit, Multi-Channel ΔΣ Analog-to-Digital Converter with I²C Interface and On-Board Reference.</h4>
       <hr>
       <ul>
-        <li><strong>Présentation</strong></li>
+        <li>
+          <strong>Présentation</strong>
+        </li>
         <p>Les circuits MCP3422, MCP3423 et MCP3424 sont des convertisseurs analogique numérique 18 bit sigma-delta précis et
           à faible bruit.
         </p>
-        <li><strong>Schéma interne du composant</strong></li>
-        <p align="center"><img src="images/mcp342x.png" width="70%" height="70%"></p>
-        <li><strong>Adressage</strong></li>
-        <p align="center"><img src="images/AdressageMCP342x.png" width="50%" height="50%"></p>
-        <li><strong>Influence de la résolution sur le débit binaire</strong></li>
+        <li>
+          <strong>Schéma interne du composant</strong>
+        </li>
         <p align="center">
-          <img src="images/data rate.png" width="50% " height="50% "></p>
-        <li><strong>Documentation: </strong><a href="datasheets/MCP342x.pdf" target="_blank">pdf</a></li>
-        <li><strong>Distributeur: </strong>
+          <img src="images/mcp342x.png" width="70%" height="70%">
+        </p>
+        <li>
+          <strong>Adressage</strong>
+        </li>
+        <p align="center">
+          <img src="images/AdressageMCP342x.png" width="50%" height="50%">
+        </p>
+        <li>
+          <strong>Influence de la résolution sur le débit binaire</strong>
+        </li>
+        <p align="center">
+          <img src="images/data rate.png" width="50% " height="50% ">
+        </p>
+        <li>
+          <strong>Documentation: </strong>
+          <a href="datasheets/MCP342x.pdf" target="_blank">pdf</a>
+        </li>
+        <li>
+          <strong>Distributeur: </strong>
           <a href="http://www.gotronic.fr/art-module-4-canaux-analogiques-i2c-dfr0316-22402.htm" target="_blank">Go Tronic</a>
         </li>
       </ul>
-      <h4>Module 4 canaux analogiques I²C DFR0316</h4>
+      <h4>Module 4 canaux analogiques I²C à circuit MCP3424</h4>
       <hr>
       <table width="100% ">
         <tr align="center">
-          <td><strong>Module DFROBOT DFR0316</strong></td>
+          <td>
+            <strong>Module DFROBOT DFR0316</strong>
+          </td>
+          <td>
+            <strong>ADC3 click - MikroElektronica</strong>
+          </td>
         </tr>
         <tr align="center">
-          <td><img src="images/dfr0316.png"></td>
+          <td>
+            <img src="images/dfr0316.png">
+          </td>
+          <td>
+            <img src="images/ADC3 click.png">
+          </td>
         </tr>
         <tr align="center">
-          <td><a href="https://www.dfrobot.com/wiki/index.php/MCP3424_18-Bit_ADC-4_Channel_with_Programmable_Gain_Amplifier_(SKU:DFR0316)"
+          <td>
+            <a href="https://www.dfrobot.com/wiki/index.php/MCP3424_18-Bit_ADC-4_Channel_with_Programmable_Gain_Amplifier_(SKU:DFR0316)"
               target="_blank">Documentation</a> -
             <a href="datasheets/DFR0316_V1.0_Schematic.PDF" target="_blank">Schéma</a>
+          </td>
+          <td>
+            <a href="https://www.mikroe.com/adc-3-click" target="_blank">Documentation</a>
           </td>
         </tr>
       </table>
       <hr>
 
       <h4 id="DUINO">1.2 Les cartes Netduino</h4>
-      <h5>Secret Labs</h5>
+      <h5>Wilderness Labs</h5>
       <hr>
       <ul>
-        <li><strong>Microcontrôleur</strong> : STM32F405RG 32 bits à architecture Cortex-M4 cadencé à 168 MHz.</li>
-        <li><strong>RAM</strong> : 164KB+.</li>
-        <li><strong>Flash</strong> : 1408KB.</li>
-        <li><strong>Port Ethernet : </strong> 10/100Mbps (Wifi:802.11b/g/n)*.</li>
-        <li><strong>E/S numériques</strong> : 22</li>
-        <li><strong>Entrées analogiques</strong> : 6</li>
-        <li><strong>Stockage</strong>: carte µSD</li>
-        <li><strong>IDE</strong> : Microsoft Visual Studio</li>
-        <li><strong>Framework</strong> : .NETMF 4.3</li>
-        <li><strong>Langages de programmation</strong> : C#, VB</li>
-        <li><strong>Compatibilité</strong> : shield Arduino, Gadgeteer</li>
+        <li>
+          <strong>Microcontrôleur</strong> : STM32F405RG 32 bits à architecture Cortex-M4 cadencé à 168 MHz.</li>
+        <li>
+          <strong>RAM</strong> : 164KB+.</li>
+        <li>
+          <strong>Flash</strong> : 1408KB.</li>
+        <li>
+          <strong>Port Ethernet : </strong> 10/100Mbps (Wifi:802.11b/g/n)*.</li>
+        <li>
+          <strong>E/S numériques</strong> : 22</li>
+        <li>
+          <strong>Entrées analogiques</strong> : 6</li>
+        <li>
+          <strong>Stockage</strong>: carte µSD</li>
+        <li>
+          <strong>IDE</strong> : Microsoft Visual Studio</li>
+        <li>
+          <strong>Framework</strong> : .NETMF 4.3</li>
+        <li>
+          <strong>Langages de programmation</strong> : C#, VB</li>
+        <li>
+          <strong>Compatibilité</strong> : shield Arduino, Gadgeteer</li>
       </ul>
       <table>
         <tr>
-          <td><img src="images/netduino3ethernet.png" alt="Netduino plus 2" target="_blank" /></td>
-          <td><img src="images/inputandoutput.png" alt="Netduino 3 wifi" target="_blank" /></td>
+          <td>
+            <img src="images/netduino3ethernet.png" alt="Netduino plus 2" target="_blank" />
+          </td>
+          <td>
+            <img src="images/inputandoutput.png" alt="Netduino 3 wifi" target="_blank" />
+          </td>
         </tr>
         <tr>
-          <td align="center"><strong>Netduino 3 Ethernet</strong></td>
-          <td align="center"><strong>Netduino 3 wifi*</strong></td>
+          <td align="center">
+            <strong>Netduino 3 Ethernet</strong>
+          </td>
+          <td align="center">
+            <strong>Netduino 3 wifi*</strong>
+          </td>
         </tr>
       </table>
       <ul>
-        <li><strong>Sites à consulter</strong> : <a href="http://netduino.com/netduinoplus2/specs.htm" target="_blank">Netduino</a>,
-          <a href="http://www.netmf.com/" target="_blank">NETMF</a></li>
-        <li><strong>Distributeurs</strong> :
+        <li>
+          <strong>Sites à consulter</strong> :
+          <a href="https://www.wildernesslabs.co/Netduino" target="_blank">Netduino</a>,
+          <a href="https://www.mountaineer.org/netmf-for-stm32/" target="_blank">NETMF</a>
+        </li>
+        <li>
+          <strong>Distributeurs</strong> :
           <a href="http://www.mouser.fr/Search/Refine.aspx?Keyword=netduino" target="_blank">Mouser Electronics</a>
         </li>
       </ul>
       <hr>
 
-      <h4 id="FEZ">1.3 Les cartes FEZ</h4>
+      <h4 id="FEZ">
+        <a name="carte-netduino-de-secret-labs" class="anchor" href="#carte-netduino-de-secret-labs" target="_blank">
+          <span class="octicon octicon-link"></span>
+        </a>1.3 Les cartes FEZ</h4>
       <h5>GHI Electonics (Extrait)</h5>
       <hr>
       <ul>
-        <li><strong>Microcontrôleur</strong> : 180 MHz 32-bit ARM Cortex-M4.(120 MHz 32-bit ARM Cortex-M3 )*</li>
-        <li><strong>SoC(SoM)*</strong> : <a href="https://www.ghielectronics.com/catalog/product/501" target="_blank">G80</a>
-          <a href="https://www.ghielectronics.com/catalog/product/373" target="_blank">G120*</a>
+        <li>
+          <strong>Microcontrôleur</strong>
+          <ul>
+            <li>84 MHz 32-bit ARM Cortex-M4 (
+              <strong>BrainPad</strong> ),</li>
+            <li>180 MHz 32-bit ARM Cortex-M4 (
+              <strong>PANDA III</strong>)*,</li>
+            <li> 120 MHz 32-bit ARM Cortex-M3 (
+              <strong>COBRA III</strong>)**</li>
+          </ul>
         </li>
-        <li><strong>RAM</strong> : 156 KB(2.87 MB)*.</li>
-        <li><strong>Flash</strong> : 256 KB (13.67 MB)*.</li>
-        <li><strong>E/S numériques</strong> : 53(60)*</li>
-        <li><strong>Entrées analogiques</strong> : 16(8)*</li>
-        <li><strong>Réseaux : </strong> Ethernet TCP/IP, WiFi, and SSL.</li>
-        <li><strong>Stockage</strong>: carte µSD</li>
-        <li><strong>IDE</strong> : Microsoft Visual Studio</li>
-        <li><strong>Framework</strong> : .NETMF 4.3</li>
-        <li><strong>Langages de programmation</strong> : C#, VB</li>
+        <li>
+          <strong>SoC(SoM)*</strong> :
+          <a href="https://old.ghielectronics.com/catalog/product/539" target="_blank">G30</a>
+          <a href="https://old.ghielectronics.com/catalog/product/501" target="_blank">G80*</a>
+          <a href="https://old.ghielectronics.com/catalog/product/373" target="_blank">G120**</a>
+        </li>
+        <li>
+          <strong>RAM</strong> : 68KB, 156KB*, 2.87MB**.</li>
+        <li>
+          <strong>Flash</strong> : 128KB, 256KB*, 13.67MB**.</li>
+        <li>
+          <strong>E/S numériques</strong> : 49, 53*, 60**</li>
+        <li>
+          <strong>Entrées analogiques</strong> : 16, 16*, 8**</li>
+        <li>
+          <strong>Réseaux : </strong> Ethernet TCP/IP, WiFi, and SSL.</li>
+        <li>
+          <strong>Stockage</strong>: carte µSD</li>
+        <li>
+          <strong>IDE</strong> : Microsoft Visual Studio Community 2015</li>
+        <li>
+          <strong>Framework</strong> : .NETMF 4.3</li>
+        <li>
+          <strong>Langages de programmation</strong> : C#, VB</li>
       </ul>
-
       <table>
         <tr>
-          <td><img src="images/panda3.png " alt="PANDA III" /></td>
-          <td><img src="images/cobra3.png " alt="COBRA III" /></td>
+          <td>
+            <img src="images/brainpad.jpg" alt="BrainPad">
+          </td>
+          <td>
+            <img src="images/panda3.png" alt="PANDA III" />
+          </td>
+          <td>
+            <img src="images/cobra3.png" alt="COBRA III" />
+          </td>
         </tr>
         <tr>
-          <td align="center"><strong>PANDA III</strong></td>
-          <td align="center"><strong>COBRA III* (compatible Gadgeteer)</strong></td>
+          <td align="center">
+            <strong>BrainPad</strong>
+          </td>
+          <td align="center">
+            <strong>PANDA III*</strong>
+          </td>
+          <td align="center">
+            <strong>COBRA III** (compatible Gadgeteer)</strong>
+          </td>
         </tr>
       </table>
-
       <ul>
-        <li><strong>Sites à consulter</strong> : <a href="https://www.ghielectronics.com/" target="_blank">GHI ELECTRONICS</a>,
-          <a href="http://www.netmf.com/" target="_blank">NETMF</a></li>
-        <li><strong>Distributeurs</strong> : <a href="http://www.mouser.fr " target="_blank">Mouser Electronics</a></li>
+        <li>
+          <strong>Sites à consulter</strong> :
+          <a href="https://www.ghielectronics.com/" target="_blank">GHI ELECTRONICS</a>,
+          <a href="https://www.mountaineer.org/netmf-for-stm32/" target="_blank">NETMF</a>
+        </li>
+        <li>
+          <strong>Distributeurs</strong> :
+          <a href="http://www.mouser.fr" target="_blank">Mouser Electronics</a>
+        </li>
       </ul>
 
       <hr>
@@ -175,66 +293,119 @@
 
       <h4 id="REP">2.1 Contenu du répertoire proposé au téléchargement</h4>
       <hr>
-      <p>Le répertoire proposé au téléchargement (au format zip ou tar.gz) contient la solution <strong>MCP342x</strong> composée
-        :
+      <p>Le répertoire proposé au téléchargement (au format zip ou tar.gz) contient la solution
+        <strong>MCP342x</strong> composée :
       </p>
       <ul>
-        <li>Du projet <strong>MCP342x </strong>: le <strong>code source</strong> de la classe <em>MCP342x</em>.</li>
-        <li>Du projet <strong>Netduino </strong>: un exemple d'utilisation de cette classe avec une carte Netduino.</li>
-        <li>Du projet <strong>FezPanda </strong>: un exemple d'utilisation de cette classe avec une carte Fez Panda.</li>
+        <li>Du projet
+          <strong>MCP342x </strong>: le
+          <strong>code source</strong> de la classe
+          <em>MCP342x</em>.</li>
+        <li>Du projet
+          <strong>Netduino </strong>: un exemple d'utilisation de cette classe avec une carte Netduino.</li>
+        <li>Du projet
+          <strong>FezPanda </strong>: un exemple d'utilisation de cette classe avec une carte Fez Panda.</li>
+        <li>Du projet
+          <strong>BrainPad</strong> : un exemple d'utilisation de cette classe avec une carte BrainPad.</li>
+        <li>Du projet
+          <strong>BrainPadLibrary</strong> : une bibliothèque écrite par GHI Electronics pour une utilisation aisée du matériel présent
+          sur la carte.</li>
       </ul>
       <hr>
 
       <h4 id="NUGET">2.2 Le NuGet MicroToolsKit</h4>
-      <p>La dernière version <strong>compilée</strong> de la classe <strong>MCP342x</strong> se situe dans la bibliothèque
-        <strong>MicroToolsKit</strong> disponible sur <a href="https://www.nuget.org/packages/WebGE.MicroToolsKit/ " target="_blank">nuget.org</a>.</p>
-      <p align="center"><img src="images/NuGet-large.png" /></p>
-      <p><strong>Organisation des classes</strong> contenues dans MicroToolsKit
+      <p>La dernière version
+        <strong>compilée</strong> de la classe
+        <strong>MCP342x</strong> se situe dans la bibliothèque
+        <strong>MicroToolsKit</strong> disponible sur
+        <a href="https://www.nuget.org/packages/WebGE.MicroToolsKit/ " target="_blank">nuget.org</a>.</p>
+      <p align="center">
+        <img src="images/NuGet-large.png" />
+      </p>
+      <p>
+        <strong>Organisation des classes</strong> contenues dans MicroToolsKit
         <a href="https://csharpembarquenetduino.wikispaces.com/6.+MicroToolsKit+library" target="_blank">[lien]</a>
       </p>
-      <p><em><strong>Important</strong> : Installer ce nuget dans le projet Visual Studio simplifie l'utilisation de la classe.</em></p>
+      <p>
+        <em>
+          <strong>Important</strong> : Installer ce nuget dans le projet Visual Studio simplifie l'utilisation de la classe.</em>
+      </p>
       <hr>
 
       <h4 id="WIKI">2.3 Les Wikis</h4>
       Des wikis sont dédiés aux cartes Netduino et GHI Fez. Ils proposent au téléchargement :
       <ul>
-        <li><strong>Deux fascicules</strong> d'exemples de code pour les cartes <strong>Netduino</strong>.
+        <li>
+          <strong>Deux fascicules</strong> d'exemples de code pour les cartes
+          <strong>Netduino</strong>.
           <a href="https://csharpembarquenetduino.wikispaces.com/5a.+Les+fascicules+d%27exemples++cod%C3%A9s+en+CSharp+pour+la+carte+Netduino"
             target="_blank">[lien]</a>
         </li>
-        <li><strong>Un fascicule</strong> d'exemples de code pour les cartes <strong>FEZ</strong>.
+        <li>
+          <strong>Un fascicule</strong> d'exemples de code pour les cartes
+          <strong>FEZ</strong>.
           <a href="https://csharpembarquenetduino.wikispaces.com/5b.+Le+fascicule+d%27exemples++cod%C3%A9s+en+CSharp+pour+les+cartes+Fez+%28PANDA+3%2C+etc%29"
             target="_blank">[lien]</a>
         </li>
+        <li>
+            <strong>Un fascicule </strong> d'exemples de code pour la carte
+            <strong>BrainPad</strong>.
+            <a href="https://csharpembarquebrainpad.wikispaces.com/6.+Exemples+de+code+%28.NetMF+v4.3%29" target="_blank">[lien]</a>
+          </li>
       </ul>
       <hr>
 
       <h4 id="DESC">2.4 Description et utilisation de la classe MCP342x</h4>
       <ul>
-        <li><strong>Rôle: </strong>Contrôler un capteur de température à infrarouges MCP342x via un bus I²C.</li>
-        <li><strong>Assembly: </strong> <em>MicroToolsKit</em> (disponible sur
+        <li>
+          <strong>Rôle: </strong>Contrôler un capteur de température à infrarouges MCP342x via un bus I²C.</li>
+        <li>
+          <strong>Assembly: </strong>
+          <em>MicroToolsKit</em> (disponible sur
           <a href="https://www.nuget.org/packages/WebGE.MicroToolsKit/" target="_blank">nuget.org</a>)</li>
-        <li><strong>Espace de noms: </strong><em>Microtoolskit.Hardware.IO</em></li>
+        <li>
+          <strong>Espace de noms: </strong>
+          <em>Microtoolskit.Hardware.IO</em>
+        </li>
       </ul>
       <hr>
 
-      <p><strong>Création d'un projet avec l'IDE Visual Studio</strong></p>
+      <p>
+        <strong>Création d'un projet avec l'IDE Visual Studio</strong>
+      </p>
       <hr>
       <ol>
-        <li><strong>Créer </strong>un nouveau projet en suivant la démarche décrite dans le chapitre <em>"Premier programme en C# étape par étape"</em>          du Wiki dédié à une carte <strong>Netduino</strong> ou du Wiki dédié à une carte <strong>Fez. </strong>Ces Wikis
-          sont accessibles
+        <li>
+          <strong>Créer </strong>un nouveau projet en suivant la démarche décrite dans le chapitre
+          <em>"Premier programme en C# étape par étape"</em> du Wiki dédié à une carte
+          <strong>Netduino</strong> ou du Wiki dédié à une carte
+          <strong>Fez. </strong>Ces Wikis sont accessibles
           <a href="https://csharpembarquenetduino.wikispaces.com/6.+MicroToolsKit+library" target="_blank">ici</a>.</li>
-        <li><strong>Utiliser</strong> le gestionnaire de paquets NuGet pour <strong>ajouter</strong> la bibliothèque <strong>MicroToolsKit</strong>          (
-          <a href="https://www.nuget.org/packages/WebGE.MicroToolsKit/ " target="_blank ">nuget.org</a>) dans le projet.
-          (Dans l'explorateur de solution, clic droit sur les <em>Références</em> du projet puis choisir <em>Gérer les packages NuGet...</em>.<strong> Installer</strong>          le paquet.)</li>
-        <li><strong>Ajouter</strong> l'espace de noms <strong>Microtoolskit.Hardware.IO</strong> dans l'en-tête du fichier source.
+        <li>
+          <strong>Utiliser</strong> le gestionnaire de paquets NuGet pour
+          <strong>ajouter</strong> la bibliothèque
+          <strong>MicroToolsKit</strong> (
+          <a href="https://www.nuget.org/packages/WebGE.MicroToolsKit/ " target="_blank ">nuget.org</a>) dans le projet. (Dans l'explorateur de solution, clic droit sur les
+          <em>Références</em> du projet puis choisir
+          <em>Gérer les packages NuGet...</em>.
+          <strong> Installer</strong> le paquet.)</li>
+        <li>
+          <strong>Ajouter</strong> l'espace de noms
+          <strong>Microtoolskit.Hardware.IO</strong> dans l'en-tête du fichier source.
         </li>
-        <li><strong>Créer</strong> un objet en utilisant le constructeur <em>MCP342x</em>.</li>
-        <li><strong>Utiliser</strong> la méthode <strong>ReadVolts</strong> pour déclencher une mesure de la tension présente
-          sur l'une des entrées du convertisseur analogique numérique.</li>
+        <li>
+          <strong>Créer</strong> un objet en utilisant le constructeur
+          <em>MCP342x</em>.</li>
+        <li>
+          <strong>Utiliser</strong> la méthode
+          <strong>ReadVolts</strong> pour déclencher une mesure de la tension présente sur l'une des entrées du convertisseur analogique
+          numérique.
+        </li>
       </ol>
       <hr>
-      <p><strong>Exemple</strong></p>
+      <p>
+        <strong>Exemple</strong>
+      </p>
       <pre>
 using System.Threading;
 using Microsoft.SPOT;
@@ -271,182 +442,328 @@ namespace test
       </pre>
       <hr>
 
-      <p><strong>Constructeurs</strong></p>
+      <p>
+        <strong>Constructeurs</strong>
+      </p>
       <table width="100%">
         <tr>
           <td></td>
-          <td><strong>Syntaxe</strong></td>
-          <td><strong>Description</strong></td>
+          <td>
+            <strong>Syntaxe</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
         </tr>
         <tr>
-          <td><img src="images/Method_16x.png"></td>
-          <td><strong>Mcp342x</strong>(<strong>UInt16</strong> <em>SLA</em>, <strong>Int16</strong> <em>Frequency</em> )</td>
-          <td>Constructeur de base. <br> Par défaut : Channel = CH1, Resolution = 12 bit, Conversion = Continuous, Gain = 1 <br>
-            <br>Instancie un objet "MCP342x ". <br><strong>SLA : </strong>adresse du module DFROBOT comprise entre 0x68 et
-            0x6B => <strong>SLA</strong>= 0x68 (par défaut)<br>
-            <strong>Frequency: </strong>>Féquence du signal SCL = 400kHz. (par défaut)<br><br>
-            <strong>Exemple</strong><br>
+          <td>
+            <img src="images/Method_16x.png">
+          </td>
+          <td>
+            <strong>Mcp342x</strong>(
+            <strong>UInt16</strong>
+            <em>SLA</em>,
+            <strong>Int16</strong>
+            <em>Frequency</em> )</td>
+          <td>Constructeur de base.
+            <br> Par défaut : Channel = CH1, Resolution = 12 bit, Conversion = Continuous, Gain = 1
+            <br>
+            <br>Instancie un objet "MCP342x ".
+            <br>
+            <strong>SLA : </strong>adresse du module DFROBOT comprise entre 0x68 et 0x6B =>
+            <strong>SLA</strong>= 0x68 (par défaut)
+            <br>
+            <strong>Frequency: </strong>>Féquence du signal SCL = 400kHz. (par défaut)
+            <br>
+            <br>
+            <strong>Exemple</strong>
+            <br>
             <em>MCP342x can = new MCP342x();</em>
           </td>
         </tr>
       </table>
 
-      <p><strong>Enumérations</strong></p>
+      <p>
+        <strong>Enumérations</strong>
+      </p>
       <table width="100%">
         <tr>
           <td></td>
-          <td><strong>Syntaxe</strong></td>
-          <td><strong>Description</strong></td>
+          <td>
+            <strong>Syntaxe</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
         </tr>
         <tr>
-          <td><img src="images/Enumerator_16x.png"></td>
-          <td><strong>Channel</strong></td>
+          <td>
+            <img src="images/Enumerator_16x.png">
+          </td>
+          <td>
+            <strong>Channel</strong>
+          </td>
           <td>
             <p>Sélection du canal sur lequel sera effectuée la conversion.
             </p>
             <ul>
-              <li><strong>Ch1</strong> (par défaut)</li>
-              <li><strong>Ch2</strong></li>
-              <li><strong>Ch3</strong></li>
-              <li><strong>Ch4</strong></li>
+              <li>
+                <strong>Ch1</strong> (par défaut)</li>
+              <li>
+                <strong>Ch2</strong>
+              </li>
+              <li>
+                <strong>Ch3</strong>
+              </li>
+              <li>
+                <strong>Ch4</strong>
+              </li>
             </ul>
           </td>
         </tr>
         <tr>
-          <td><img src="images/Enumerator_16x.png"></td>
-          <td><strong>ConversionMode</strong></td>
+          <td>
+            <img src="images/Enumerator_16x.png">
+          </td>
+          <td>
+            <strong>ConversionMode</strong>
+          </td>
           <td>
             <p>Un échantillonnage ou échantillonnage continu.</p>
             <ul>
-              <li><strong>OneShot</strong> : réduit la consommation</li>
-              <li><strong> Continuous</strong> (par défaut)</li>
+              <li>
+                <strong>OneShot</strong> : réduit la consommation</li>
+              <li>
+                <strong> Continuous</strong> (par défaut)</li>
             </ul>
           </td>
         </tr>
         <tr>
-          <td><img src="images/Enumerator_16x.png"></td>
-          <td><strong>PGA_Gain</strong></td>
+          <td>
+            <img src="images/Enumerator_16x.png">
+          </td>
+          <td>
+            <strong>PGA_Gain</strong>
+          </td>
           <td>
             <p>Facteur d'amplification du signal avant une conversion.</p>
             <ul>
-              <li><strong>x1</strong> (par défaut)</li>
-              <li><strong>x2</strong></li>
-              <li><strong>x4</strong></li>
-              <li><strong>x8</strong></li>
+              <li>
+                <strong>x1</strong> (par défaut)</li>
+              <li>
+                <strong>x2</strong>
+              </li>
+              <li>
+                <strong>x4</strong>
+              </li>
+              <li>
+                <strong>x8</strong>
+              </li>
             </ul>
           </td>
         </tr>
         <tr>
-          <td><img src="images/Enumerator_16x.png"></td>
-          <td><strong>SampleRate</strong></td>
+          <td>
+            <img src="images/Enumerator_16x.png">
+          </td>
+          <td>
+            <strong>SampleRate</strong>
+          </td>
           <td>
             <p>Régle la résolution du convertisseur et la fréquence d'échantillonage Fe :</p>
             <ul>
-              <li><strong>TwelveBits</strong> => Fe = 240 SPS (par défaut)</li>
-              <li><strong>FourteenBits</strong> => Fe = 60 SPS</li>
-              <li><strong>SixteenBits</strong> => Fe =15 SPS</li>
-              <li><strong>EighteenBits</strong> => Fe = 3,75 SPS</li>
+              <li>
+                <strong>TwelveBits</strong> => Fe = 240 SPS (par défaut)</li>
+              <li>
+                <strong>FourteenBits</strong> => Fe = 60 SPS</li>
+              <li>
+                <strong>SixteenBits</strong> => Fe =15 SPS</li>
+              <li>
+                <strong>EighteenBits</strong> => Fe = 3,75 SPS</li>
             </ul>
           </td>
         </tr>
       </table>
 
-      <p><strong>Propriétés</strong></p>
+      <p>
+        <strong>Propriétés</strong>
+      </p>
       <table>
         <tr>
           <td></td>
-          <td><strong>Syntaxe</strong></td>
-          <td><strong>Description</strong></td>
+          <td>
+            <strong>Syntaxe</strong>
+          </td>
+          <td>
+            <strong>Description</strong>
+          </td>
         </tr>
         <tr>
-          <td><img src="images/Property_20x.png"></td>
-          <td><strong>Resolution</strong></td>
-          <td>Fixe ou retourne la résolution du convertisseur. <br> Type : SampleRate
-            <br><br>
-            <strong>Exemples</strong><br> // Pour régler la résolution du can à 14 bits. <br>
-            <em>can.Resolution = MCP342x.SampleRate.FourteenBits;</em> <br> // Pour connaître la résolution du can <br>
+          <td>
+            <img src="images/Property_20x.png">
+          </td>
+          <td>
+            <strong>Resolution</strong>
+          </td>
+          <td>Fixe ou retourne la résolution du convertisseur.
+            <br> Type : SampleRate
+            <br>
+            <br>
+            <strong>Exemples</strong>
+            <br> // Pour régler la résolution du can à 14 bits.
+            <br>
+            <em>can.Resolution = MCP342x.SampleRate.FourteenBits;</em>
+            <br> // Pour connaître la résolution du can
+            <br>
             <em>int resolution = 12 + 2*(byte)can.Resolution;</em>
           </td>
         </tr>
         <tr>
-          <td><img src="images/Property_20x.png"></td>
-          <td><strong>Gain</strong></td>
-          <td>Fixe ou retourne le gain appliqué au signal sur l'entrée sélectionnée. <br> Type : PGA_Gain
-            <br><br>
-            <strong>Exemples</strong><br> // Pour régler le gain de l'amplificateur à x4. <br>
-            <em>can.Gain = MCP342x.PGA_Gain.x4;</em> <br> // Pour connaître la valeur du gain de l'amplificateur<br>
+          <td>
+            <img src="images/Property_20x.png">
+          </td>
+          <td>
+            <strong>Gain</strong>
+          </td>
+          <td>Fixe ou retourne le gain appliqué au signal sur l'entrée sélectionnée.
+            <br> Type : PGA_Gain
+            <br>
+            <br>
+            <strong>Exemples</strong>
+            <br> // Pour régler le gain de l'amplificateur à x4.
+            <br>
+            <em>can.Gain = MCP342x.PGA_Gain.x4;</em>
+            <br> // Pour connaître la valeur du gain de l'amplificateur
+            <br>
             <em>double gain = System.Math.Pow(2, (byte)can.Gain);</em>
           </td>
         </tr>
         <tr>
-          <td><img src="images/Property_20x.png"></td>
-          <td><strong>CHannel</strong></td>
-          <td>Fixe ou retourne le canal sélectionné. <br> Type : Channel
-            <br><br>
-            <strong>Exemples</strong><br> // Pour relier le canal CH2 à l'entrée du can. <br>
-            <em>can.CHannel = MCP342x.Channel.Ch2; </em> <br> // Pour connaître le canal relié au can <br>
+          <td>
+            <img src="images/Property_20x.png">
+          </td>
+          <td>
+            <strong>CHannel</strong>
+          </td>
+          <td>Fixe ou retourne le canal sélectionné.
+            <br> Type : Channel
+            <br>
+            <br>
+            <strong>Exemples</strong>
+            <br> // Pour relier le canal CH2 à l'entrée du can.
+            <br>
+            <em>can.CHannel = MCP342x.Channel.Ch2; </em>
+            <br> // Pour connaître le canal relié au can
+            <br>
             <em>double canal = System.Math.Pow(2, (double)can.CHannel);</em>
           </td>
         </tr>
         <tr>
-          <td><img src="images/Property_20x.png"></td>
-          <td><strong>Mode</strong></td>
-          <td>Fixe ou retourne le mode de conversion. <br> Type : ConversionMode
-            <br><br>
-            <strong>Exemples</strong><br> // Pour régler le mode de conversion sur One Shot . <br>
-            <em> can.Mode = MCP342x.ConversionMode.OneShot; </em> <br> // Pour connaître le mode de conversion <br>
+          <td>
+            <img src="images/Property_20x.png">
+          </td>
+          <td>
+            <strong>Mode</strong>
+          </td>
+          <td>Fixe ou retourne le mode de conversion.
+            <br> Type : ConversionMode
+            <br>
+            <br>
+            <strong>Exemples</strong>
+            <br> // Pour régler le mode de conversion sur One Shot .
+            <br>
+            <em> can.Mode = MCP342x.ConversionMode.OneShot; </em>
+            <br> // Pour connaître le mode de conversion
+            <br>
             <em>byte mode = (byte)can.Mode;</em>
           </td>
         </tr>
 
         <tr>
-          <td><img src="images/Property_20x.png"></td>
-          <td><strong>TransactionTimeOut</strong></td>
+          <td>
+            <img src="images/Property_20x.png">
+          </td>
+          <td>
+            <strong>TransactionTimeOut</strong>
+          </td>
           <td>Fixe ou retourne le temps (en ms) accordé à la transaction avant la génération d'une System.IO.Exception. 1000ms
-            par défaut. <br> Type : ushort
-            <br><br>
-            <strong>Exemples</strong><br> // Pour régler la durée maximum d'une transaction à 200ms. <br>
-            <em>can.TransactionTimeOut = 200; </em> <br> // Pour connaître la durée maximum accordée à une transaction <br>
+            par défaut.
+            <br> Type : ushort
+            <br>
+            <br>
+            <strong>Exemples</strong>
+            <br> // Pour régler la durée maximum d'une transaction à 200ms.
+            <br>
+            <em>can.TransactionTimeOut = 200; </em>
+            <br> // Pour connaître la durée maximum accordée à une transaction
+            <br>
             <em> ushort time = can.TransactionTimeOut;</em>
           </td>
         </tr>
       </table>
 
-      <p><strong>Méthodes</strong></p>
+      <p>
+        <strong>Méthodes</strong>
+      </p>
       <table width="100%">
         <tr>
           <td></td>
-          <td><strong>Syntaxe</strong></td>
-          <td><strong>Description</strong></td>
-        </tr>
-        <tr>
-          <td><img src="images/Method_16x.png"></td>
-          <td><strong>void</strong> ConfigDevice(<strong>byte</strong><em> value</em>)</strong>
+          <td>
+            <strong>Syntaxe</strong>
           </td>
           <td>
-            <p>Configure le circuit avec : <br>value = RDY C1 C0 /O_C S1 S0 G1 G0 <br>Remarque : value = 00010000 (par default)</p>
-            <ul>
-              <li><strong>RDY : </strong>En lecture, fin de la conversion. En écriture, déclenche une conversion</li>
-              <li><strong>C1, C0 : </strong>Choix du canal</li>
-              <li><strong>/O_C : </strong>Réglage du mode : 0 = One Shot, 1 = Continuous</li>
-              <li><strong>S1, S0 : </strong>Réglage de la résolution</li>
-              <li><strong>G1, G0 : </strong>Réglage du gain</li>
-            </ul>
-            <br>
-            <strong>Note</strong> <br> Une exception System.IO.IOException est générée avec le message "I2CBus error SLA"
-            en cas d'échec de la communication. SLA est l'adresse du circuit.
+            <strong>Description</strong>
           </td>
         </tr>
         <tr>
-          <td><img src="images/Method_16x.png"></td>
-          <td><strong>double</strong> ReadVolts()<br>
+          <td>
+            <img src="images/Method_16x.png">
+          </td>
+          <td>
+            <strong>void</strong> ConfigDevice(
+            <strong>byte</strong>
+            <em> value</em>)</strong>
+          </td>
+          <td>
+            <p>Configure le circuit avec :
+              <br>value = RDY C1 C0 /O_C S1 S0 G1 G0
+              <br>Remarque : value = 00010000 (par default)</p>
+            <ul>
+              <li>
+                <strong>RDY : </strong>En lecture, fin de la conversion. En écriture, déclenche une conversion</li>
+              <li>
+                <strong>C1, C0 : </strong>Choix du canal</li>
+              <li>
+                <strong>/O_C : </strong>Réglage du mode : 0 = One Shot, 1 = Continuous</li>
+              <li>
+                <strong>S1, S0 : </strong>Réglage de la résolution</li>
+              <li>
+                <strong>G1, G0 : </strong>Réglage du gain</li>
+            </ul>
+            <br>
+            <strong>Note</strong>
+            <br> Une exception System.IO.IOException est générée avec le message "I2CBus error SLA" en cas d'échec de la communication.
+            SLA est l'adresse du circuit.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="images/Method_16x.png">
+          </td>
+          <td>
+            <strong>double</strong> ReadVolts()
+            <br>
           </td>
           <td>
             <p>Configure le circuit si des paramètres ont été changés. Renvoie la valeur de la tension présente sur l'entrée
               sélectionnée (en V) </p>
-            <br> <strong>Notes</strong> <br>- Une exception <em>System.IO.IOException</em> est générée avec le message "I2CBus
-            error SLA" en cas d'échec de la communication. <br>- Une exception <em>System.IO.IOException</em> est générée
-            avec le message "No sample on SLA" si la lecture du résultat de la conversion échoue. SLA est l'adresse du circuit.
+            <br>
+            <strong>Notes</strong>
+            <br>- Une exception
+            <em>System.IO.IOException</em> est générée avec le message "I2CBus error SLA" en cas d'échec de la communication.
+            <br>- Une exception
+            <em>System.IO.IOException</em> est générée avec le message "No sample on SLA" si la lecture du résultat de la conversion
+            échoue. SLA est l'adresse du circuit.
           </td>
         </tr>
       </table>
@@ -456,9 +773,15 @@ namespace test
   <!-- FOOTER  -->
   <div id="footer_wrap" class="outer">
     <footer class="inner ">
-      <p class="copyright">Classe <strong><em>MCP242x</em></strong> développée en C# sous .NETMF 4.3 pour les cartes Netduino et FEZ (PANDA, COBRA...)
-        maintained by <a href="https://github.com/WebGE">WebGE</a></p>
-      <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      <p class="copyright">Classe
+        <strong>
+          <em>MCP242x</em>
+        </strong> développée en C# sous .NETMF 4.3 pour les cartes Netduino et FEZ (PANDA, COBRA...) maintained by
+        <a href="https://github.com/WebGE">WebGE</a>
+      </p>
+      <p>Published with
+        <a href="https://pages.github.com">GitHub Pages</a>
+      </p>
     </footer>
   </div>
 
