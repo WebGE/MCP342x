@@ -66,13 +66,13 @@ See <a href="https://webge.github.io/MCP342x/" target="_blank">MCP342x GitHub Pa
 
 <strong>Wiki</strong>
 --------------------
-<p><a href="https://csharpembarquenetduino.wikispaces.com/Home" target="_blank">Netduino et FEZ</a> (in French).</p>
-<p><a href="https://csharpembarquebrainpad.wikispaces.com/Home" target="_blank">BrainPad</a> (in French).</p>
+- <a href="https://csharpembarquenetduino.wikispaces.com/Home" target="_blank">Netduino et FEZ</a> (in French).
+- <a href="https://csharpembarquebrainpad.wikispaces.com/Home" target="_blank">BrainPad</a> (in French).
 
 <strong>News feed on Google+</strong>
 --------------------
-<p><a href="https://plus.google.com/collection/oaaJX" target="_blank">Netduino et FEZ</a> (in French).</p>
-<p><a href="https://plus.google.com/collection/sEHQME" target="_blank">BrainPad</a> (in French).</p>
+- <a href="https://plus.google.com/collection/oaaJX" target="_blank">Netduino et FEZ</a> (in French).
+- <a href="https://plus.google.com/collection/sEHQME" target="_blank">BrainPad</a> (in French).
 
 <strong>Project site</strong>
 --------------------
