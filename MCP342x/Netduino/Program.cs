@@ -2,7 +2,7 @@
 
 using System.Threading;
 using Microsoft.SPOT;
-using testMicroToolsKit.Hardware.IO;
+//using testMicroToolsKit.Hardware.IO;
 using Microtoolskit.Hardware.IO;
 using Microtoolskit.Hardware.Displays;
 
@@ -12,13 +12,12 @@ namespace Netduino
     {
         public static void Main()
         {
-            byte Nb = 3; // Channels on test in single mode
-            bool commut = true;
+            byte Nb = 4; // Channels under test in single mode
 
             MCP342x can = new MCP342x();
             PCF8574 leds = new PCF8574();
 #if LCD
-            ELCD162 lcd = new ELCD162();
+            ELCD162 lcd = new ELCD162("COM1");
             lcd.Init(); lcd.ClearScreen(); lcd.CursorOff();
 #endif
 
@@ -28,6 +27,8 @@ namespace Netduino
             Thread.Sleep(2000);
 #endif
             can.Mode = MCP342x.ConversionMode.OneShot;
+            can.Resolution = MCP342x.SampleRate.TwelveBits;
+            can.Gain = MCP342x.PGA_Gain.x1;
             double resolution = Resolution(can.Resolution);
             double gain = System.Math.Pow(2, (byte)can.Gain);
 
@@ -58,9 +59,10 @@ namespace Netduino
 #if LCD
             lcd.ClearScreen();
             lcd.PutString("Continuous Conv.");
+            Thread.Sleep(2000);
 #endif
             can.Mode = MCP342x.ConversionMode.Continuous;
-            byte j = 1;
+            byte j = 1; bool commut = true;
 
             while (true)
             {

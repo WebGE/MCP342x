@@ -1,0 +1,1299 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MicroToolsKit</name>
+    </assembly>
+    <members>
+        <member name="T:Microtoolskit.Hardware.IHM.IHMSSI">
+            <summary>
+            IHM SSI (PCF2119 and two PCF8574) class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on https://webge.github.io/IHMSSI/
+            </remarks>
+        </member>
+        <member name="T:Microtoolskit.Hardware.IHM.IHMSSI.Led">
+            <summary>
+            IHM SSI LED class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on https://webge.github.io/IHMSSI/
+            </remarks>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IHM.IHMSSI.Led.#ctor(System.Boolean,System.Byte,Microtoolskit.Hardware.IO.PCF8574)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="state">true or false</param>
+            <param name="position">position 0 to 7</param>
+            <param name="leds">I2C port I/O</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IHM.IHMSSI.Led.Write(System.Boolean)">
+            <summary>
+            Write true or false on Led n (n = 0...7)
+            </summary>
+            <param name="state">true or false</param>
+        </member>
+        <member name="T:Microtoolskit.Hardware.IHM.IHMSSI.BP">
+            <summary>
+            IHM SSI button class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on https://webge.github.io/IHMSSI/
+            </remarks>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IHM.IHMSSI.#ctor">
+            <summary>
+            Constructor : LCD = MIDAS(0x3A); PCF8574 (addBPs_I2C = 0x3f, addLeds_I2C=0x38); Frequence_Bus=100kHz;
+            Leds => Off; Lcd => Init
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IHM.IHMSSI.#ctor(Microtoolskit.Hardware.Displays.I2CLcd)">
+            <summary>
+            Constructor : PCF8574 (addBPs_I2C = 0x3f, addLeds_I2C=0x38); Frequence_Bus=100kHz;
+            </summary>
+            <param name="lcd">MIDAS(0x3A) or BATRON(0x3B), F[100kHz,400kHz]</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IHM.IHMSSI.#ctor(Microtoolskit.Hardware.IO.PCF8574,Microtoolskit.Hardware.Displays.I2CLcd)">
+            <summary>
+            Constructor : LCD = MIDAS(0x3A); PCF8574 (addBPs_I2C = 0x3f, addLeds_I2C=0x38); Frequence_Bus=100kHz;
+            </summary>
+            <param name="leds">addLeds_I2C=> PCF8574[0x20, 0x27], PCF8574A[0x38, 0x3F], F[100kHz,400kHz]</param>
+            <param name="lcd">MIDAS(0x3A) or BATRON(0x3B)</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IHM.IHMSSI.#ctor(Microtoolskit.Hardware.IO.PCF8574,Microtoolskit.Hardware.IO.PCF8574,Microtoolskit.Hardware.Displays.I2CLcd)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="leds">addLeds_I2C=> PCF8574[0x20, 0x27], PCF8574A[0x38, 0x3F], F[100kHz,400kHz]</param>
+            <param name="BPs">addLeds_I2C=> PCF8574[0x20, 0x27], PCF8574A[0x38, 0x3F], F[100kHz,400kHz]</param>
+            <param name="lcd">MIDAS(0x3A) or BATRON(0x3B), F[100kHz,400kHz]</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IHM.IHMSSI.LedsOff">
+            <summary>
+            All Leds Off
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IHM.IHMSSI.LedsOn">
+            <summary>
+            All Leds On
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IHM.IHMSSI.LedsWrite(System.Byte)">
+            <summary>
+            "0" => Led On, "1" => Led Off
+            </summary>
+            <param name="value">value to write</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IHM.IHMSSI.BPsRead(System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@)">
+            <summary>
+            Reads all IHMSSI board buttons
+            </summary>
+            <param name="BPEchap"></param>
+            <param name="BPEnter"></param>
+            <param name="BPOk"></param>
+            <param name="BPSet"></param>
+            <param name="BPMoins"></param>
+            <param name="BPFleBas"></param>
+            <param name="BPFleHaut"></param>
+            <param name="BPPlus"></param>
+        </member>
+        <member name="T:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver">
+            <summary>
+            A class to manage the EasyDriver v4.4. An Open Source Hardware Stepper Motor Drive Project.
+            </summary>
+            <remarks>
+            Thanks to Gus (GHI Electronics team). You may have some additional information about this class on http://webge.github.io/EasyStepperDriver/
+            </remarks>
+        </member>
+        <member name="T:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.Direction">
+            <summary>
+            Directions are Forward or Backward
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.Mode">
+            <summary>
+            Modes are Full, Half, Quarter, OneEighth
+            </summary> 
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.Steps">
+            <summary>
+            Get Steps
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.StepDirection">
+            <summary>
+            Get or Set direction
+            </summary>      
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.StepMode">
+            <summary>
+            Get or Set Step Mode
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.StepDelay">
+            <summary>
+            Get or set time between two step
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.IsDriverSleep">
+            <summary>
+            Get if Sleep or not
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.IsOutputsEnable">
+            <summary>
+            Get if Enable or Disable
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.#ctor(Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin)">
+            <summary>
+            Creates an instance of the driver, that only lets you move and choose direction.
+            </summary>
+            <param name="DirectionPin">(DIR) This needs to be a 0V to 5V (or 0V to 3.3V if you've set your Easy Driver up that way) digital signal.
+            The level if this signal (high/low) is sampled on each rising edge of STEP to determine which direction to take the step (or microstep).</param>
+            <param name="StepPin">(STEP) This needs to be a 0V to 5V (or 0V to 3.3V if you've set your Easy Driver that way) digital signal. 
+            Each rising edge of this signal will cause one step (or microstep) to be taken.</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.#ctor(Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin)">
+            <summary>
+            Creates an instance of the driver, that only lets you move, choose direction and put the controller to sleep.
+            </summary>
+            <param name="DirectionPin">(DIR) This needs to be a 0V to 5V (or 0V to 3.3V if you've set your Easy Driver up that way) digital signal.
+            The level if this signal (high/low) is sampled on each rising edge of STEP to determine which direction to take the step (or microstep).</param>
+            <param name="StepPin">(STEP) This needs to be a 0V to 5V (or 0V to 3.3V if you've set your Easy Driver that way) digital signal. 
+            Each rising edge of this signal will cause one step (or microstep) to be taken.</param>
+            <param name="SleepPin">(SLP) This normally high input signal will minimize power consumption by disabling 
+            internal circuitry and the output drivers when pulled low.(disabled by default)</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.#ctor(Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin)">
+            <summary>
+            Creates an instance of the driver, that only lets you move, choose direction and select step mode.
+            </summary>
+            <param name="DirectionPin">(DIR) This needs to be a 0V to 5V (or 0V to 3.3V if you've set your Easy Driver up that way) digital signal.
+            The level if this signal (high/low) is sampled on each rising edge of STEP to determine which direction to take the step (or microstep).</param>
+            <param name="StepPin">(STEP) This needs to be a 0V to 5V (or 0V to 3.3V if you've set your Easy Driver that way) digital signal. 
+            Each rising edge of this signal will cause one step (or microstep) to be taken.</param>
+            /// <param name="StepModePinOne">(MS1) These digital inputs control the microstepping mode. Possible settings are (MS1/MS2) : full step (0,0), half step (1,0), 1/4 step (0,1), and 1/8 step (1,1 : default)</param>
+            <param name="StepModePinTwo">(MS2) These digital inputs control the microstepping mode. Possible settings are (MS1/MS2) : full step (0,0), half step (1,0), 1/4 step (0,1), and 1/8 step (1,1 : default)</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.#ctor(Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin)">
+            <summary>
+            Creates an instance of the driver, that only lets you move, choose direction, sleep, and select step mode.
+            </summary>
+            <param name="DirectionPin">(DIR) This needs to be a 0V to 5V (or 0V to 3.3V if you've set your Easy Driver up that way) digital signal.
+            The level if this signal (high/low) is sampled on each rising edge of STEP to determine which direction to take the step (or microstep).</param>
+            <param name="StepPin">(STEP) This needs to be a 0V to 5V (or 0V to 3.3V if you've set your Easy Driver that way) digital signal. 
+            Each rising edge of this signal will cause one step (or microstep) to be taken.</param>
+            <param name="StepModePinOne">(MS1) These digital inputs control the microstepping mode. Possible settings are (MS1/MS2) : full step (0,0), half step (1,0), 1/4 step (0,1), and 1/8 step (1,1 : default)</param>
+            <param name="StepModePinTwo">(MS2) These digital inputs control the microstepping mode. Possible settings are (MS1/MS2) : full step (0,0), half step (1,0), 1/4 step (0,1), and 1/8 step (1,1 : default)</param>
+            <param name="SleepPin">(SLP) This normally high input signal will minimize power consumption by disabling 
+            internal circuitry and the output drivers when pulled low.(disabled by default)</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.#ctor(Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin,Microsoft.SPOT.Hardware.Cpu.Pin)">
+            <summary>
+            Creates an instance of the driver, that only lets you move, choose direction, sleep, select step mode and enable / disable card
+            </summary>
+            <param name="DirectionPin">(DIR) This needs to be a 0V to 5V (or 0V to 3.3V if you've set your Easy Driver up that way) digital signal.
+            The level if this signal (high/low) is sampled on each rising edge of STEP to determine which direction to take the step (or microstep).</param>
+            <param name="StepPin">(STEP) This needs to be a 0V to 5V (or 0V to 3.3V if you've set your Easy Driver that way) digital signal. 
+            Each rising edge of this signal will cause one step (or microstep) to be taken.</param>
+            <param name="StepModePinOne">(MS1) These digital inputs control the microstepping mode. Possible settings are (MS1/MS2) : full step (0,0), half step (1,0), 1/4 step (0,1), and 1/8 step (1,1 : default)</param>
+            <param name="StepModePinTwo">(MS2) These digital inputs control the microstepping mode. Possible settings are (MS1/MS2) : full step (0,0), half step (1,0), 1/4 step (0,1), and 1/8 step (1,1 : default)</param>
+            <param name="SleepPin">(SLP) This normally high input signal will minimize power consumption by disabling 
+            internal circuitry and the output drivers when pulled low.(disabled by default)</param>
+            <param name="EnablePin">(EN) This normally low input signal will disable all outputs when pulled high.</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.Sleep">
+            <summary>
+            Put the stepper driver to sleep mode
+            </summary>
+            <returns>Boolean : True if sleep, false otherwise</returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.WakeUp">
+            <summary>
+            Wake up the stepper driver
+            </summary>
+            <returns>Boolean : True if WakeUp, false otherwise </returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.EnableOutputs">
+            <summary>
+            Enable the stepper driver outputs
+            </summary>
+            <returns>Boolean : True if Outputs are enable, false otherwise </returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.DisableOutputs">
+            <summary>
+            Disable the stepper driver outputs
+            </summary>
+            <returns>Boolean : True if Outputs are disable, false otherwise</returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.Turn(System.UInt32,System.Int32)">
+            <summary>
+            Moves the stepper motor
+            </summary>
+            <param name="steps">Indicate the amount of steps that need to be moved</param>
+            <param name="stepdelay">Duration between steps</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.Turn(System.UInt32,Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.Direction,System.Int32,Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.Mode)">
+            <summary>
+            Moves the stepper motor
+            </summary>
+            <param name="steps">Indicate the amount of steps that need to be moved</param>
+            <param name="direction">Indicates the direction of rotation</param>
+            <param name="stepdelay">Duration between steps</param>
+            <param name="mode">Full, Half, Quarter, or OneEighth step</param>                               
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.ChangeDirection(Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.Direction)">
+            <summary>
+            Set Direction pin
+            </summary>
+            <param name="direction">Indicates the direction of rotation</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.ChangeStepMode(Microtoolskit.Hardware.MotorDrivers.EasyStepperDriver.Mode)">
+            <summary>
+            Set pins MS1 and MS2 
+            </summary>
+            <param name="mode">Full, Half, Quarter, or OneEighth step</param>
+        </member>
+        <member name="T:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x">
+            <summary>
+            MotorControlMD2x Dual 12Volt 2.8Amp H Bridge Motor Drive class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on https://github.com/WebGE/MD25
+            </remarks>
+        </member>
+        <member name="F:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x._transactionTimeOut">
+            <summary>
+            Transaction time out = 1s before throwing System.IO.IOException 
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x._config">
+            <summary>
+            Slave Adress and frequency configuration
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x._sla">
+            <summary>
+            7-bit Slave Adress
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.WRegister">
+            <summary>
+            Writable Registers
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.ModeRegister.Mode0">
+            <summary>
+            (Default Setting) - The speed registers is literal speeds in the range of (see below)
+            </summary>
+            <remarks>   
+            Speed registers :  0 (Full Reverse) 128 (Stop) 255 (Full Forward)
+            </remarks>
+        </member>
+        <member name="F:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.ModeRegister.Mode1">
+            <summary>
+             Mode 1 is similar to Mode 0, except that the speed values are interpreted as signed values. 
+            </summary>
+            <remarks>
+             Speed registers : -128 (Full Reverse) 0 (Stop) 127 (Full Forward).
+            </remarks>
+        </member>
+        <member name="F:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.ModeRegister.Mode2">
+            <summary>
+            Speed1 control both motors speed, and speed2 becomes the
+            turn value. 
+            </summary>
+            <remarks>
+            Data is in the range of 0 (Full Reverse) 128 (Stop) 255 (Full Forward)
+            </remarks>
+        </member>
+        <member name="F:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.ModeRegister.Mode3">
+            <summary>
+            Mode 3 is similar to Mode 2, except that the speed values are interpreted as signed values. 
+            </summary>
+            <remarks>
+            Data is in the range of -128 (Full Reverse) 0 (Stop) 127 (Full Forward) 
+            </remarks>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.#ctor">
+            <summary>
+            This constructor assumes the default factory Slave Address = 0x58 and default bus frequency = 100Khz
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.#ctor(System.UInt16)">
+            <summary>
+            This constructor allows user to specify the Slave Address (bus frequency = 100Khz)
+            </summary>
+            <param name="SLA">MD25(@=0x58 to 0x5F), 0x58 by default (see datasheet)</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.#ctor(System.UInt16,System.UInt16)">
+            <summary>
+            This constructor allows user to specify the Slave Address and the bus frequency
+            </summary>
+            <param name="SLA">MD25(@=0x58 to 0x5F), 0x58 by default (see datasheet)</param>
+            <param name="Frequency">100khz to 400kHz, 100kHz by default</param>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.Speed1">
+            <summary>
+            Return motor1 speed1.
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.Speed2Turn">
+            <summary>
+            Return motor2 speed (mode 0,1) or turn (mode 2,3).
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.Encoder1">
+            <summary>
+            Return Encoder1 value (32-bit).
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.Encoder2">
+            <summary>
+            Return Encoder2 value (32-bit).
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.Battery">
+            <summary>
+            Return as 10 times the voltage (121 for 12.1V)
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.Current1">
+            <summary>
+            Return the current through motor 1.
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.Current2">
+            <summary>
+            Return the current through motor 2.
+            </summary>         
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.SoftRev">
+            <summary>
+            Return the software revision number.
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.AccelerationRate">
+            <summary>
+            Set or return optional acceleration register (1, 2, 3, 5(default), 10). See datasheet to calculate the time (in seconds) for the acceleration to complete.
+            </summary>
+            <remarks>
+            If you require a controlled acceleration period for the attached motors to reach there ultimate speed,
+            the MD25 has the ability to provide this. It works by using a sent acceleration value and incrementing
+            the power by that value. 
+            </remarks>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.Mode">
+            <summary>
+            Return the mode of operation among Mode0, Mode1, Mode2 or Mode3 
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.Command">
+            <summary>
+            Set or return the command register value. 
+            </summary>
+            <remarks>
+            0x20(32) Resets the encoder registers to zero. 
+            0x30(48) Disables automatic speed regulation. 
+            0x31(49) Enables automatic speed regulation (default). 
+            0x32(50) Disables 2 second timeout of motors (Version 2 onwards only). 
+            0x33(51) Enables 2 second timeout of motors when no I2C comms (default) (Version 2 onwards only)
+            See datasheet for more informations (changing the I2C Bus Address).
+            </remarks>
+        </member>
+        <member name="P:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.TransactionTimeOut">
+            <summary>
+            Set or return time before System IO Exception if transaction failed (in ms).
+            </summary>
+            <remarks>
+            1000ms by default
+            </remarks>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.SetRegister(Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.WRegister,System.Byte)">
+            <summary>
+            Set value on register
+            </summary>
+            <param name="Register">Register number (0 to 16)</param>
+            <param name="value">Register value</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.GetAllRegisters">
+            <summary>
+            Read all registers and calculate Encoder1 and Encoder2 value.
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.SetMode(Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.ModeRegister)">
+            <summary>
+            The mode register selects which mode of operation and I2C data input type the user requires. 
+            </summary>
+            <param name="valmode">Mode0, Mode1, Mode2 or Mode3 (see MotorControlMD2x.ModeRegister)</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.RazEncoders">
+            <summary>
+            Set encoder registers value (Enc1a,b,c,d and Enc2a,b,c,d) to 0.
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.StopMotor">
+            <summary>
+            Stop motors in all modes.
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.MotorDrivers.MotorControlMD2x.SetSpeedTurn(System.Byte,System.Byte)">
+            <summary>
+            Adjusts the speed of the motors in mode 0 and 1. Speed and Turn in mode 2 and 3
+            </summary>
+            <remarks>
+            Turn mode looks at the speed register to decide if the direction is forward or reverse. 
+            Then it applies a subtraction or addition of the turn value on either motor.
+            If the direction is forward motor speed1 = speed - turn, motor speed2 = speed + turn
+            else the direction is reverse so motor speed1 = speed + turn, motor speed2 = speed - turn
+            </remarks>
+            <param name="ValSpeed1">Speed motor1 value</param>
+            <param name="ValSpeed2Turn">Speed motor2 value (mode0 and 1). Turn value (mode 2 and 3) </param>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Displays.I2CLcd">
+            <summary>
+            PCF2119 I²C LCD controllers/drivers class. 
+            </summary>
+            <remarks>
+            You may have some additional information about this class on http://webge.github.io/LCDI2C/
+            </remarks>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.#ctor">
+            <summary>
+            This constructor assumes the default Midas factory Slave Address = 0x3A and bus frequency = 100kHz
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.#ctor(System.Byte)">
+            <summary>
+            This constructor allows user to specify the Slave Address, bus frequency = 100khz
+            </summary>
+            <param name="I2C_Add_7bits">Manufacturer Adress I2C</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.#ctor(Microtoolskit.Hardware.Displays.I2CLcd.LcdManufacturer)">
+            <summary>
+            This constructor allows user to specify the LCD Manufacturer name, bus frequency = 100khz
+            </summary>
+            <param name="ManufacturerName">LCD Manufacturer Name</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.#ctor(System.Byte,System.UInt16)">
+            <summary>
+            This constructor allows user to specify the Slave Address and bus frequency
+            </summary>
+            <param name="I2C_Add_7bits">Manufacturer Adress I2C</param>
+            <param name="FreqBusI2C">Bus frequency</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.#ctor(Microtoolskit.Hardware.Displays.I2CLcd.LcdManufacturer,System.UInt16)">
+             <summary>
+             This constructor allows user to specify the LCD Manufacturer name and bus frequency
+             </summary>
+            <param name="ManufacturerName">LCD Manufacturer Name</param>
+             <param name="FreqBusI2C">Bus frequency</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.Init">
+            <summary>
+            Initialize the LCD before use 
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.SelectCursor(Microtoolskit.Hardware.Displays.I2CLcd.CursorType)">
+            <summary>
+            Three cursor modes
+            </summary>
+            <param name="posCursor"></param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.SetBacklight(System.Byte)">
+            <summary>
+            Set brightness  20 dark -> 0 light
+            </summary>
+            <param name="bright"></param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.LineBegin(System.Byte)">
+            <summary>
+            Goto start of line
+            </summary>
+            <param name="x"></param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.PutString(System.Byte,System.Byte,System.String)">
+            <summary>
+            Write a line of text at x,y
+            </summary>
+            <param name="x_pos"></param>
+            <param name="y_pos"></param>
+            <param name="Text"></param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.PutChar(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Single character write at x,y
+            </summary>
+            <param name="x_pos"></param>
+            <param name="y_pos"></param>
+            <param name="z_char"></param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.I2CLcd.ClearScreen">
+            <summary>
+            Clear screen
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Displays.ELCD162">
+            <summary>
+            ELCD162 : lcd serie control Driver class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on http://webge.github.io/ELCD162/
+            </remarks>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.ELCD162.#ctor(System.String,System.Int32,System.IO.Ports.Parity,System.Int32,System.IO.Ports.StopBits)">
+            <summary>
+            Built a COM port with COM2, 19200, None, 8, 1 stop
+            </summary>
+            <param name="com"></param>
+            <param name="baudrate"></param>
+            <param name="parite"></param>
+            <param name="bits"></param>
+            <param name="stopb"></param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.ELCD162.Init">
+            <summary> 
+            Open the communication and send Initiate Byte 0xA
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.ELCD162.PutString(System.String)">
+            <summary>
+            Convert string in UTF8 and push
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.ELCD162.ClearScreen">
+            <summary>
+            Clear screen
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.ELCD162.CursorOn">
+            <summary>
+            Put cursor on
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.ELCD162.CursorOff">
+            <summary>
+            Put cursor off
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Displays.ELCD162.SetCursor(System.Byte,System.Byte)">
+            <summary>
+            Put cursor on (x,y)
+            </summary>
+            <param name="x_pos"></param>
+            <param name="y_pos"></param>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.SRF08">
+            <summary>
+            SRF08 Ultra sonic range finder  class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on http://webge.github.io/SRF08/
+            </remarks>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.SRF08.Registers">
+            <summary>
+            SRF08 Registers list
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.SRF08.MeasuringUnits">
+            <summary>
+            SRF08 ranging Mode and Unity
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.SRF08.#ctor">
+            <summary>
+            Constructor with Slave Address = 0x70 and Bus Frequency = 100kHz
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.SRF08.#ctor(System.Byte)">
+            <summary>
+            Constructor with Bus Frequency = 100kHz
+            </summary>
+            <param name="I2C_Add_7bits">ADDR in 0x70 to 0x7F</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.SRF08.#ctor(System.UInt16,System.UInt16)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="I2C_Add_7bits">ADDR in 0x70 to 0x7F</param>
+            <param name="FreqBusI2C">400kHz max</param>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.SRF08.VersSoft">
+            <summary>
+            Software Revision Register Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.SRF08.Mode">
+            <summary>
+            Mode Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.SRF08.LightSensor">
+            <summary>
+            Light Sensor Register Get Access
+            </summary>
+            <return></return>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.SRF08.FirstEchoHighByte">
+            <summary>
+            1st Echo High Byte
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.SRF08.FirstEchoLowByte">
+            <summary>
+            1st Echo Low Byte Get Access
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.SRF08.ReadRange(Microtoolskit.Hardware.Sensors.SRF08.MeasuringUnits)">
+            <summary>
+            Triggers a shot ulrasons, wait for 75ms and return result in the unit of measure
+            </summary>
+            <param name="units">unit of measure expected</param>
+            <returns>range in cm or inches or millisec</returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.SRF08.TrigShotUS(Microtoolskit.Hardware.Sensors.SRF08.MeasuringUnits)">
+            <summary>
+            Only triggers a shot ulrasons
+            </summary>
+            <param name="units">unit of measure expected</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.SRF08.GetRegister(Microtoolskit.Hardware.Sensors.SRF08.Registers)">
+            <summary>
+            Returns the value contained in a register
+            et +
+            </summary>
+            <param name="RegisterNumber">The register number</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.HMC6352">
+            <summary>
+            HMC6352 Digital Compass class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on todo
+            </remarks>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TSL2561">
+            <summary>
+            TSL2561 LIGHT-TO-DIGITAL CONVERTER class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on http://webge.github.io/TSL2561/
+            </remarks>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TSL2561.AddRegisters">
+            <summary>
+            TSL2561 Registers list
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TSL2561.Channels">
+            <summary>
+            TSL2561 Channels list
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TSL2561.CommandByte">
+            <summary>
+            TSL2561 CommandByte list
+            </summary>
+            CommanByte = CommandBit | ClearBit | WordBit| BlockBit | ControlPowerOn | ControlPowerOff
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TSL2561.ControlByte">
+            <summary>
+            TSL2561 ControlByte list
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TSL2561.IntegrationTime">
+            <summary>
+            IntegrationTime
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TSL2561.Gain">
+            <summary>
+            Gain x1 = 0xEF (0-> bit4) x16 = 0x10 (1->bit4)command
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.Dispose">
+            <summary>
+            Déconnexion virtuelle de l'objet Lcd du bus I2C
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.#ctor">
+            <summary>
+            Constructor with Slave Address = 0x29 and Bus Frequency = 100kHz
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.#ctor(System.Byte)">
+            <summary>
+            Constructor with Bus Frequency = 100kHz
+            </summary>
+            <param name="I2C_Add_7bits">ADDR SEL TERMINAL LEVEL: (GND)0x29, (VDD)0x49, (FLOAT)0x69</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.#ctor(System.Byte,System.UInt16)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="I2C_Add_7bits">ADDR SEL: (GND)0x29, (VDD)0x49, (FLOAT)0x69</param>
+            <param name="Frequency">400 khz max</param>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.TSL2561.control">
+            <summary>
+            Control Register Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.TSL2561.timing">
+            <summary>
+            Timing Register Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.TSL2561.threshLowLow">
+            <summary>
+            Threshlowlow Register Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.TSL2561.threshLowhigh">
+            <summary>
+            Threshlowhigh Register Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.TSL2561.threshhighLow">
+            <summary>
+            Threshhighlow Register Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.TSL2561.threshhighhigh">
+            <summary>
+            Threshhighhigh Register Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.TSL2561.interrupt">
+            <summary>
+            Interrupt Register Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.TSL2561.id">
+            <summary>
+            Id Register Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.TSL2561.channel0">
+            <summary>
+            Channel0 Register Get Access
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.TSL2561.channel1">
+            <summary>
+            Channel1 Register Get Access
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.Init">
+            <summary>
+            TSL2561 Initialisation : 
+            Power Up, IRQ disable,Power Down
+            Gain = 1, Integrate time = 13ms
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.SetRegister(Microtoolskit.Hardware.Sensors.TSL2561.AddRegisters,System.Byte)">
+            <summary>
+            Write a byte in a register
+            </summary>
+            <param name="add">register adress</param>
+            <param name="value">value to write</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.GetRegister(Microtoolskit.Hardware.Sensors.TSL2561.AddRegisters)">
+            <summary>
+            Read a byte from a register
+            </summary>
+            <param name="add">register adress</param>
+            <returns>register value</returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.GetWord(Microtoolskit.Hardware.Sensors.TSL2561.AddRegisters)">
+            <summary>
+            
+            </summary>
+            <param name="add"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.Enable">
+            <summary>
+            TSL2561 power up
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.Disable">
+            <summary>
+            TSL2561 power down
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TSL2561.calculateLux">
+            <summary>
+            Calculate lux for Adafruit or Grove sensor 
+            </summary>
+            <returns>lux</returns>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TMP102">
+            <summary>
+            TMP102 Low-Power Digital Temperature Sensor With SMBus and Two-Wire Serial Interface class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on https://github.com/WebGE/TMP102
+            </remarks>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TMP102.ADD0">
+            <summary>
+            7 bits Address pin ADD0. 
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ADD0.Gnd">
+            <summary>
+            ADD0.Gnd = 0x48 (default)
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ADD0.Vcc">
+            <summary>
+            ADD0.Vcc = 0x49
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ADD0.SDA">
+            <summary>
+            ADD0.SDA = 0x4A
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ADD0.SCL">
+            <summary>
+            ADD0.SCL = 0x4B
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TMP102.ConversionRate">
+            <summary>
+            Conversion rates
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ConversionRate.quarter_Hz">
+            <summary>
+            0.25Hz
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ConversionRate.one_Hz">
+            <summary>
+            1Hz
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ConversionRate.four_Hz">
+            <summary>
+            4Hz (default)
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ConversionRate.eight_Hz">
+            <summary>
+            8Hz
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TMP102.ThermostatMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ThermostatMode.ComparatorMode">
+            <summary>
+            default
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ThermostatMode.InterruptMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TMP102.AlertPolarity">
+            <summary>
+            The Polarity bit allows the user to adjust the polarity
+            of the ALERT pin output. 
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.AlertPolarity.activeLow">
+            <summary>
+            default
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.AlertPolarity.activeHigh">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TMP102.ConsecutiveFaults">
+            <summary>
+            A fault condition exists when the measured
+            temperature exceeds the user-defined limits set in the
+            THIGH and TLOW registers
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ConsecutiveFaults.one">
+            <summary>
+            default
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ConsecutiveFaults.two">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ConsecutiveFaults.four">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.TMP102.ConsecutiveFaults.six">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.TMP102.Registers">
+            <summary>
+            The 8-bit Pointer Register of the device is
+            used to address a given data register
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TMP102.#ctor(Microtoolskit.Hardware.Sensors.TMP102.ADD0,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="addressSelect">ADD0 connected to Gnd (0x48 default)</param>
+            <param name="FreqBusI2C">100kHz (Default)</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TMP102.Init">
+            <summary>
+            Initialise TMP102 with default values : oneShotMode = false, alertPolarity = activeHigh, conversionRate = four_Hz, thermostatMode = ComparatorMode
+            consecutiveFaults = one, limitHigh = 0, limitLow = 0
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TMP102.Init(System.Boolean,Microtoolskit.Hardware.Sensors.TMP102.AlertPolarity,Microtoolskit.Hardware.Sensors.TMP102.ConversionRate,Microtoolskit.Hardware.Sensors.TMP102.ThermostatMode)">
+            <summary>
+            Initialise the TMP102
+            </summary>
+            <param name="oneShotMode">true : OneShot, false : Conversion ready (default)</param>
+            <param name="alertPolarity">The polarity of the ALERT pin output</param>
+            <param name="conversionRate">Conversion rates : 8Hz, 4Hz (default), 1Hz, or 0.25Hz</param>
+            <param name="thermostatMode">In comparator mode, the ALERT pin becomes active
+            when the temperature equals or exceeds the value
+            in THIGH for a consecutive number of fault conditions</param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TMP102.ReadAsCelcius">
+            <summary>
+            Read temperature and return Celcius
+            </summary>
+            <returns>temperature as Celcius</returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TMP102.ReadAsFahrenheit">
+            <summary>
+            Read temperature and return Fahrenheit
+            </summary>
+            <returns>temperature as Fahrenheit</returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TMP102.ReadAsKelvin">
+            <summary>
+            Read temperature and return Kelvin
+            </summary>
+            <returns>temperature as Kelvin</returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.TMP102.ReadAsRankine">
+            <summary>
+            Read temperature and return Rankine
+            </summary>
+            <returns>temperature as Rankine</returns>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.MLX90614">
+            <summary>
+            MLX90614 IR Temperature sensor class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on https://webge.github.io/MLX90614/
+            </remarks>
+        </member>
+        <member name="T:Microtoolskit.Hardware.Sensors.MLX90614.data">
+            <summary>
+            data size : one or two bytes
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.MLX90614.sla">
+            <summary>
+            7-bit Slave Adress
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.Sensors.MLX90614.config">
+            <summary>
+            MLX90614 configuration
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.MLX90614.#ctor(System.UInt16,System.Int16)">
+            <summary>
+            MLX90614 IR Temperature sensor
+            </summary>
+            <param name="SLA">7-bit Slave Address (0x00 to 0x7F) 0x5A by default</param>
+            <param name="Frequency">10kHz to 100kHz (50kHz by default)</param>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.MLX90614.SLA">
+            <summary>
+            Get 7-bit Slave Adress
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.Sensors.MLX90614.ConfigRegister">
+            <summary>
+            Get Config Register
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.MLX90614.Read_TA_AsCelcius">
+            <summary>
+            Returns the air temperature in degrees Celsius
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.MLX90614.Read_Tobj_AsCelcius">
+            <summary>
+            Returns the object temperature in degrees Celsius
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.MLX90614.Read_TA_AsFahrenheit">
+            <summary>
+            Returns the air temperature in degrees Fahrenheit
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.MLX90614.Read_Tobj_AsFahrenheit">
+            <summary>
+            Returns the object temperature in degrees Fahrenheit
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.Sensors.MLX90614.readRegister(System.Byte,Microtoolskit.Hardware.Sensors.MLX90614.data)">
+            <summary>
+            Get 16-bit data in RAM or EEPROM register
+            </summary>
+            <param name="register">Air temperature TA = 0x06, Object temperature Tobj1 = 0x07</param>
+            <param name="size">One or txo bytes</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microtoolskit.Hardware.IO.PCF8574">
+            <summary>
+            PCF8574 - Remote 8-bit I/O expander for I2C-bus with interrupt class
+            </summary>
+            <remarks>
+            You may have some additional information about this class on http://webge.github.io/PCF8574/
+            </remarks>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.PCF8574._transactionTimeOut">
+            <summary>
+            Transaction time out = 1s before throwing System.IO.IOException 
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.PCF8574._config">
+            <summary>
+            Slave Adress and frequency configuration
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.PCF8574._sla">
+            <summary>
+            7-bit Slave Adress
+            </summary>
+        </member>
+        <member name="P:Microtoolskit.Hardware.IO.PCF8574.TransactionTimeOut">
+            <summary>
+            Get or set time before System IO Exception if transaction failed (in ms).
+            </summary>
+            <remarks>
+            1000ms by default
+            </remarks>
+        </member>
+        <member name="P:Microtoolskit.Hardware.IO.PCF8574.SLA">
+            <summary>
+            Get Slave Adress
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IO.PCF8574.#ctor(System.UInt16,System.Int16)">
+            <summary>
+            PCF8574 8-bit I/O expander
+            </summary>
+            <param name="SLA">PCF8574(@=0x20 to 0x27) or PCF8574A(@=0x38 to 0x3f), 0x38 by default</param>
+            <param name="Frequency">100khz to 400kHz, 100kHz by default </param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IO.PCF8574.Write(System.Byte)">
+            <summary>
+            Write byte on PCF8574 I/O port 
+            </summary>
+            <param name="value"> data to write</param>
+            <remarks>
+            System.IO.IOException trowed with "I2CBus error SLA" message if TRANSACTION TIME OUT.
+            </remarks>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IO.PCF8574.Read">
+            <summary>
+            Read byte on PCF8574 I/O port.
+            </summary>
+            <remarks>
+            System.IO.IOException trowed with "I2CBus error SLA" message if TRANSACTION TIME OUT.
+            </remarks>
+        </member>
+        <member name="T:Microtoolskit.Hardware.IO.MCP342x">
+            <summary>
+            A Class to manage the MicroChip MCP342x, 18-Bit Multi-Channel delta-sigma ADC series with
+            I²C Interface and On-Board Reference
+            </summary>
+            <remarks>
+            Can be used with MCP3422/3/4.
+            </remarks>
+        </member>
+        <member name="T:Microtoolskit.Hardware.IO.MCP342x.SampleRate">
+            <summary>
+            Resolution Selection affects convertion time (more bits, slower conversion)
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.SampleRate.TwelveBits">
+            <summary>
+            240 SPS (By default on power-up)
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.SampleRate.FourteenBits">
+            <summary>
+            60 SPS
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.SampleRate.SixteenBits">
+            <summary>
+            15 SPS
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.SampleRate.EighteenBits">
+            <summary>
+            3.75 SPS
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.IO.MCP342x.ConversionMode">
+            <summary>
+            Use One-Shot if very low power consuption is required
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.ConversionMode.OneShot">
+            <summary>
+            The device performs a single conversion and enters a low current standby mode automatically until it
+            receives another conversion command. This reduces current consumption greatly during idle periods.
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.ConversionMode.Continuous">
+            <summary>
+            The conversion takes place continuously at the set conversion speed. See Resolution. (By default on power-up)
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.IO.MCP342x.Channel">
+            <summary>
+            MCP3422 and MCP3423 devices have two differential input channels and the MCP3424 has four differential input channels
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.Channel.Ch1">
+            <summary>
+            MCP3422/3/4 (By default on power-up)
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.Channel.Ch2">
+            <summary>
+            MCP3422/3/4
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.Channel.Ch3">
+            <summary>
+            MCP3424
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.Channel.Ch4">
+            <summary>
+            MCP3424
+            </summary>
+        </member>
+        <member name="T:Microtoolskit.Hardware.IO.MCP342x.PGA_Gain">
+            <summary>
+            Selects the gain factor for the input signal before the analog-to-digital conversion takes place
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x.PGA_Gain.x1">
+            <summary>
+            By default on power-up Gain = x1
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x._config">
+            <summary>
+             MCP342x configuration : SLave Address and Frequency
+            </summary>
+        </member>
+        <member name="F:Microtoolskit.Hardware.IO.MCP342x._sla">
+            <summary>
+            7-bit Slave Adress
+            </summary>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IO.MCP342x.#ctor(System.UInt16,System.Int16)">
+            <summary>
+            Basic Constructor - By default on power-up (Channel = CH1, Resolution = 12-bit, Conversion = Continuous, Gain = 1)
+            </summary>
+            <param name="SLA">7 bits Slave Address 0x68, 0x6A, 0x6C or 0x6E (0x68 by default)</param>
+            <param name="Frequency">Standard : 100kHz to fast 400kHz or high-speed (3.4MHz) (100kHz by default)</param>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IO.MCP342x.ConfigDevice(System.Byte)">
+            <summary>
+            Write value to configuration register
+            </summary>
+            <param name="value">RDY C1 C0 /O_C S1 S0 G1 G0 = 00010000 (default)</param>
+        </member>
+        <member name="P:Microtoolskit.Hardware.IO.MCP342x.Resolution">
+            <summary>
+            Get or Set Sample Rate Selection Bit
+            </summary>
+            <remarks>
+            Get :  0 => 240 SPS (12 bits) (Default), 1 => 60 SPS (14 bits), 2 => 15 SPS (16 bits), 3 => 3.75 SPS (18 bits)
+            </remarks>
+        </member>
+        <member name="P:Microtoolskit.Hardware.IO.MCP342x.Gain">
+            <summary>
+            Get or Set PGA Gain Selection Bits
+            </summary>
+            <remarks>
+            Get :  0 => x1 (Default), 1 => x2, 2 => x4, 3 => x8
+            </remarks>
+        </member>
+        <member name="P:Microtoolskit.Hardware.IO.MCP342x.CHannel">
+            <summary>
+            Get or Set Channel Selection Bits
+            </summary>
+            <remarks>
+            MCP3422 and MCP3423 : CH1 or CH2 - MCP3424 : CH1, CH2, CH3 or CH4
+            </remarks>
+        </member>
+        <member name="P:Microtoolskit.Hardware.IO.MCP342x.Mode">
+            <summary>
+            Get or Set Conversion Mode
+            </summary>
+            <remarks>
+            One-Shot Conversion mode or Continuous Conversion mode
+            </remarks>
+        </member>
+        <member name="P:Microtoolskit.Hardware.IO.MCP342x.TransactionTimeOut">
+            <summary>
+            Time before System IO Exception if transaction failed
+            </summary>
+            <remarks>
+            1000ms by default
+            </remarks>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IO.MCP342x.ReadVolts">
+            <summary>
+            Reads the selected input channel and converts to voltage units
+            </summary>
+            <returns>Voltage representated as a double-precision real</returns>
+        </member>
+        <member name="M:Microtoolskit.Hardware.IO.MCP342x.dataReadRaw(System.Byte)">
+            <summary>
+            Reads the raw counts from the ADC
+            </summary>
+            <param name="number">Number of bytes to read (four if 18-bit conversion else three) </param>
+            <returns>Result of 12, 14, 16 or 18-bit conversion</returns>
+        </member>
+    </members>
+</doc>
